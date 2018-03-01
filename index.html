@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content='text/html;charset=utf-8'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no,address=no"/>
+    <title>首页</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="menu">
+                <span class="menu_item active_menu">换色</span><span class="menu_item">轮毂</span><span class="menu_item">配置</span>
+            </div>
+            <div class="outside_sub_menu">
+                <div class="sub_menu clear active_sub_menu">
+                    <div class="sub_menu_wrap">
+                        <span class="sub_menu_item col blue ">蓝色</span>
+                        <span class="sub_menu_item col black">黑色</span>
+                        <span class="sub_menu_item col red">红色</span>
+                        <span class="sub_menu_item col brown">棕色</span>
+                        <span class="sub_menu_item col silver">银色</span>
+                        <span class="sub_menu_item col champagne">香槟色</span>
+                        <span class="sub_menu_item col grey">灰色</span>
+                        <span class="sub_menu_item col red">红色</span>
+                        <span class="sub_menu_item col red">红色</span>
+                    </div>
+                    <div class="show_more">
+                        <img src="./images/CombinedShape.png" alt="" >
+                    </div>
+                </div>
+                <div class="sub_menu clear">
+                    <div class="sub_menu_wrap">
+                        <span class="sub_menu_item">轮毂1</span>
+                        <span class="sub_menu_item">轮毂2</span>
+                        <span class="sub_menu_item">轮毂3</span>
+                    </div>
+                    <div class="show_more">
+                        <img src="./images/CombinedShape.png" alt="" >
+                    </div>
+                </div>
+                <div class="sub_menu clear">
+                    <div class="sub_menu_wrap">
+                        <span class="sub_menu_item">轮毂1</span>
+                        <span class="sub_menu_item">轮毂2</span>
+                        <span class="sub_menu_item">轮毂3</span>
+                    </div>
+                    <div class="show_more">
+                        <img src="./images/CombinedShape.png" alt="" >
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <img src="./images/car_01.jpg" alt="" class="car">
+            <div class="model">Jeep K8 大指挥官</div>
+        </div>
+    </div>
+
+    <script src="https://cdn.upchinapro.com/assert/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+          var $menuItem = $('.menu_item');
+          var $subMenu = $('.sub_menu');
+          var $subMenuItem = $('.sub_menu_item');
+
+          // 顶上menu切换
+          $menuItem.on('click', function (e) {
+            e.stopPropagation();
+            var $me = $(this);
+            var index = $me.index();
+
+            $menuItem.removeClass('active_menu');
+            $me.addClass('active_menu');
+            $subMenu.removeClass('active_sub_menu');
+            $subMenu.eq(index).addClass('active_sub_menu')
+          });
+
+          $subMenuItem.on('click', function (e) {
+            e.stopPropagation();
+            var $me = $(this);
+            $subMenuItem.removeClass('active_item');
+            $me.addClass('active_item');
+          })
+        })
+    </script>
+</body>
+</html>

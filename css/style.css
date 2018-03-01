@@ -1,0 +1,117 @@
+.container .menu .menu_item {
+    width: 33.3333%;
+    display: inline-block;
+    text-align: center;
+    background-color: #222121;
+    box-sizing: border-box;
+    border: 1px solid #302E2E;
+    font-size: 15px;
+    font-family: PingFangSC-Medium;
+    height: 35px;
+    line-height: 35px;
+    color: #fff;
+}
+
+.container .header {
+    position: relative;
+}
+
+.container .menu .menu_item.active_menu {
+    background: #FEB92D;
+}
+
+.container .sub_menu{
+    width: 100%;
+    display: none;
+}
+
+.container .sub_menu.active_sub_menu {
+    display: block;
+}
+
+.container .sub_menu.active_sub_menu .sub_menu_item.active_item {
+    border-bottom: 2px solid #DA9A17;
+}
+
+.container .sub_menu_wrap {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 13px 30px 13px 10px;
+}
+
+.container .sub_menu .sub_menu_item {
+    padding: 13px 10px;
+}
+
+.container .sub_menu .col.sub_menu_item:before {
+    content: " ";
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-right: 2px;
+}
+
+.container .sub_menu .col.blue.sub_menu_item:before {
+    background-color: blue;
+}
+
+.container .sub_menu .black.sub_menu_item:before {
+    background-color: black;
+}
+
+.container .sub_menu .red.sub_menu_item:before {
+    background-color: red;
+}
+
+.container .sub_menu .brown.sub_menu_item:before {
+    background-color: #a66138;
+}
+
+.container .sub_menu .silver.sub_menu_item:before {
+    background-color: #B6B6B6;
+}
+
+
+.container .sub_menu .champagne.sub_menu_item:before {
+    background-color: #D3B98E;
+}
+
+.container .sub_menu .grey.sub_menu_item:before {
+    background-color: grey;
+}
+
+.container .sub_menu .show_more {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    position: absolute;
+    right: 0;
+    bottom: 2px;
+    background-image: linear-gradient(to right, rgba(255,255,255,0.4), rgba(255,255,255,1));
+}
+
+.container .sub_menu .show_more img {
+    width: 60%;
+    text-align: center;
+    line-height: 40px;
+}
+
+.container .content .car {
+    width: 100%;
+    display: block;
+}
+
+.container .content {
+    position: relative;
+}
+
+.container .content .model {
+    background-color: rgba(34, 33, 33, .6);
+    position: absolute;
+    top: 9px;
+    padding: 12px 15px;
+    color: #fff;
+}
