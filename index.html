@@ -1,92 +1,144 @@
 <!doctype html>
 <html lang="en">
-    <meta charset="UTF-8">
-    <meta http-equiv="content-type" content='text/html;charset=utf-8'/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-    <meta name="format-detection" content="telephone=no,address=no"/>
-    <title>首页</title>
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/style.css">
+<meta charset="UTF-8">
+<meta http-equiv="content-type" content='text/html;charset=utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="format-detection" content="telephone=no,address=no"/>
+<title>首页</title>
+<link rel="stylesheet" href="./css/reset.css">
+<link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="menu">
-                <span class="menu_item active_menu">换色</span><span class="menu_item">轮毂</span><span class="menu_item">配置</span>
-            </div>
-            <div class="outside_sub_menu">
-                <div class="sub_menu clear active_sub_menu">
-                    <div class="sub_menu_wrap">
-                        <span class="sub_menu_item col blue ">蓝色</span>
-                        <span class="sub_menu_item col black">黑色</span>
-                        <span class="sub_menu_item col red">红色</span>
-                        <span class="sub_menu_item col brown">棕色</span>
-                        <span class="sub_menu_item col silver">银色</span>
-                        <span class="sub_menu_item col champagne">香槟色</span>
-                        <span class="sub_menu_item col grey">灰色</span>
-                        <span class="sub_menu_item col red">红色</span>
-                        <span class="sub_menu_item col red">红色</span>
-                    </div>
-                    <div class="show_more">
-                        <img src="./images/CombinedShape.png" alt="" >
-                    </div>
-                </div>
-                <div class="sub_menu clear">
-                    <div class="sub_menu_wrap">
-                        <span class="sub_menu_item">轮毂1</span>
-                        <span class="sub_menu_item">轮毂2</span>
-                        <span class="sub_menu_item">轮毂3</span>
-                    </div>
-                    <div class="show_more">
-                        <img src="./images/CombinedShape.png" alt="" >
-                    </div>
-                </div>
-                <div class="sub_menu clear">
-                    <div class="sub_menu_wrap">
-                        <span class="sub_menu_item">轮毂1</span>
-                        <span class="sub_menu_item">轮毂2</span>
-                        <span class="sub_menu_item">轮毂3</span>
-                    </div>
-                    <div class="show_more">
-                        <img src="./images/CombinedShape.png" alt="" >
-                    </div>
-                </div>
-            </div>
+<div class="container">
+  <div class="header">
+    <div class="menu">
+      <span class="menu_item active_menu">换色</span><span class="menu_item">轮毂</span><span class="menu_item">配置</span>
+    </div>
+    <div class="outside_sub_menu">
+      <div class="sub_menu clear active_sub_menu">
+        <div class="sub_menu_wrap">
+          <span class="sub_menu_item col blue active_item" data-url="./images/1.jpg">蓝色</span>
+          <span class="sub_menu_item col black" data-url="./images/2.jpg">黑色</span>
+          <span class="sub_menu_item col red" data-url="./images/3.jpg">红色</span>
+          <span class="sub_menu_item col brown" data-url="./images/4.jpg">棕色</span>
+          <span class="sub_menu_item col silver">银色</span>
+          <span class="sub_menu_item col champagne">香槟色</span>
+          <span class="sub_menu_item col grey">灰色</span>
+          <span class="sub_menu_item col red">红色</span>
+          <span class="sub_menu_item col red">红色</span>
         </div>
-        <div class="content">
-            <img src="./images/car_01.jpg" alt="" class="car">
-            <div class="model">Jeep K8 大指挥官</div>
+        <div class="show_more">
+          <img src="./images/CombinedShape.png" alt="">
         </div>
+      </div>
+      <div class="sub_menu clear">
+        <div class="sub_menu_wrap">
+          <span class="sub_menu_item active_item">轮毂1</span>
+          <span class="sub_menu_item">轮毂2</span>
+          <span class="sub_menu_item">轮毂3</span>
+        </div>
+        <div class="show_more">
+          <img src="./images/CombinedShape.png" alt="">
+        </div>
+      </div>
+      <div class="sub_menu clear">
+        <div class="sub_menu_wrap">
+          <span class="sub_menu_item active_item">轮毂1</span>
+          <span class="sub_menu_item">轮毂2</span>
+          <span class="sub_menu_item">轮毂3</span>
+        </div>
+        <div class="show_more">
+          <img src="./images/CombinedShape.png" alt="">
+        </div>
+      </div>
     </div>
 
-    <script src="https://cdn.upchinapro.com/assert/jquery/1.9.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function () {
-          var $menuItem = $('.menu_item');
-          var $subMenu = $('.sub_menu');
-          var $subMenuItem = $('.sub_menu_item');
+  </div>
+  <div class="content">
+    <img src="./images/0.jpg" alt="" class="car">
+    <div class="model">Jeep K8 大指挥官</div>
+    <div class="describe">
+      <p class="des_title">赛道级 2.0T 旗舰动力</p>
+      <p class="des_content">FCA 集团全新一代2.0T发动机，同级别最强升功率/升扭矩（汽油机罕见达到 200N·m），欧洲进口技术+满足欧六排放标准，全新正时系统、全铝结构、众多高科技加持</p>
+    </div>
+    <div class="reserve">立即预定</div>
+    <img src="./images/circulation.png" alt="" class="circulation">
+  </div>
+</div>
 
-          // 顶上menu切换
-          $menuItem.on('click', function (e) {
-            e.stopPropagation();
-            var $me = $(this);
-            var index = $me.index();
+<div class="loading_wrap">
+  <img src="./images/loading.gif" alt="" class="loading">
+</div>
 
-            $menuItem.removeClass('active_menu');
-            $me.addClass('active_menu');
-            $subMenu.removeClass('active_sub_menu');
-            $subMenu.eq(index).addClass('active_sub_menu')
-          });
+<script src="https://cdn.upchinapro.com/assert/jquery/1.9.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function () {
+    var $menuItem = $('.menu_item');
+    var $subMenu = $('.sub_menu');
+    var $subMenuItem = $('.sub_menu_item');
+    var $car = $('.car');
 
-          $subMenuItem.on('click', function (e) {
-            e.stopPropagation();
-            var $me = $(this);
-            $subMenuItem.removeClass('active_item');
-            $me.addClass('active_item');
-          })
-        })
-    </script>
+
+    var index = 1;
+    var lastIndex = 1;
+    var num = 60;
+    var speed = 10;
+
+    // 顶上menu切换
+    $menuItem.on('click', function (e) {
+      e.stopPropagation();
+      var $me = $(this);
+      var idx = $me.index();
+
+      $menuItem.removeClass('active_menu');
+      $me.addClass('active_menu');
+      $subMenu.removeClass('active_sub_menu');
+      $subMenu.eq(idx).addClass('active_sub_menu')
+    });
+
+    $subMenuItem.on('click', function (e) {
+      e.stopPropagation();
+      var $me = $(this);
+      $subMenuItem.removeClass('active_item');
+      $me.addClass('active_item');
+      $car.attr('src', $me.data('url'));
+
+    });
+
+    $car.on('mousedown touchstart', function (e) {
+      "mousedown" == e.type && e.preventDefault();
+      e = e || window.event;
+      document.body.style.cursor = 'w-resize';
+      //记录当前按下的位置
+      var startX = e.clientX || e.originalEvent.touches[0].pageX;
+      $car.on('mousemove touchmove', function (evt) {
+        "mousemove" == evt.type && evt.preventDefault();
+        evt = evt || window.event;
+
+        var dis = evt.clientX || evt.originalEvent.touches[0].pageX - startX;
+
+        index = Math.floor(dis / speed) % num + lastIndex;
+
+
+        if (index < 0) {
+          index = index % num + num;
+
+        } else if (index >= num) {
+          index = index % num;
+        }
+
+
+        $car.attr('src', 'images/' + index + '.jpg');
+      })
+    }).on("mouseup touchend", function (e) {
+      "mouseup" == e.type && e.preventDefault();
+      $car.off('mousemove touchmove');
+    })
+  })
+
+
+</script>
 </body>
 </html>
