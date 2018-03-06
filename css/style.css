@@ -1,15 +1,26 @@
+.container .logo span {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.container .logo {
+    background: #191919;
+    color: #fff;
+    padding-left: 6px;
+}
+
 .container .menu .menu_item {
     width: 33.3333%;
     display: inline-block;
     text-align: center;
     background-color: #222121;
     box-sizing: border-box;
-    border: 1px solid #302E2E;
     font-size: 15px;
     font-family: PingFangSC-Medium;
     height: 35px;
     line-height: 35px;
     color: #fff;
+    border: 1px solid #302E2E;
 }
 
 .container .header {
@@ -18,6 +29,8 @@
 
 .container .menu .menu_item.active_menu {
     background: #FEB92D;
+    cursor: pointer;
+    border: 1px solid #FEB92D;
 }
 
 .container .sub_menu{
@@ -31,6 +44,8 @@
 
 .container .sub_menu.active_sub_menu .sub_menu_item.active_item {
     border-bottom: 2px solid #DA9A17;
+    cursor: pointer;
+    color: #DA9A17;
 }
 
 .container .sub_menu_wrap {
@@ -108,10 +123,81 @@
     position: relative;
 }
 
+/*.container .content:after {*/
+    /*content: " ";*/
+    /*display: block;*/
+    /*height: 45px;*/
+    /*width: 100%;*/
+/*}*/
+
 .container .content .model {
     background-color: rgba(34, 33, 33, .6);
     position: absolute;
     top: 9px;
     padding: 12px 15px;
     color: #fff;
+}
+
+.container .content .describe {
+    position: absolute;
+    bottom: 0;
+    padding: 8px 16px;
+    background-color: rgba(34, 33, 33, .6);
+    color: #fff;
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    display: none;
+}
+
+.container .content .describe .des_title{
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.container .content .reserve {
+    position: fixed;
+    bottom: 93px;
+    padding: 7px 15px 7px 18px;
+    right: 0;
+    background-image: linear-gradient(to right, #FFF0C8, #FFDE8D);
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.container .content .circulation {
+    position: absolute;
+    bottom: 198px;
+    left: 50%;
+    width: 48px;
+    margin-left: -24px;
+}
+
+.loading {
+    position: absolute;
+    width: 280px;
+    top: 50%;
+    left: 50%;
+    margin-left: -140px;
+    margin-top: -105px;
+}
+
+.loading_wrap {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #1B1D1C;
+    z-index: 9;
+    display: none;
+}
+
+.container .footer {
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    font-family: PingFangSC-Regular;
+    font-size: 17px;
+    color: #FFFFFF;
+    background: #222121;;
 }
