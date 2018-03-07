@@ -23,8 +23,8 @@
 </head>
 <body>
     <div class="container">
-        <div class="logo"><span>Jeep K8大指挥官</span></div>
         <div class="header">
+            <div class="logo"><span>Jeep K8大指挥官</span></div>
             <div class="menu">
                 <span class="menu_item">换色</span><span class="menu_item">轮毂</span><span class="menu_item">配置</span>
             </div>
@@ -35,7 +35,7 @@
                         <span carcolor="black_limited" class="sub_menu_item col black" data-url="./images/2.jpg">黑色</span>
                         <span carcolor="red_summit" class="sub_menu_item col red" data-url="./images/3.jpg">红色</span>
                         <span carcolor="brown_overland" class="sub_menu_item col brown" data-url="./images/4.jpg">棕色</span>
-                        <span carcolor="white_limited" class="sub_menu_item col silver">银色</span>
+                        <span carcolor="blue_summit" class="sub_menu_item col silver">银色</span>
                         <span carcolor="blue_summit" class="sub_menu_item col champagne">香槟色</span>
                         <span carcolor="blue_summit" class="sub_menu_item col grey">灰色</span>
                         <span carcolor="blue_summit" class="sub_menu_item col silver" data-url="./images/5.jpg">银色</span>
@@ -82,7 +82,7 @@
                     200N·m），欧洲进口技术+满足欧六排放标准，全新正时系统、全铝结构、众多高科技加持
                 </p>
             </div>
-            <div class="reserve">立即预定</div>
+            <div class="reserve lightSpeedIn">立即预定</div>
             <img src="./images/circulation.png" alt="" class="circulation">
         </div>
         <div onclick="Switchover(this)" id="SwitchoverBtn" class="footer">点击进入内饰页</div>
@@ -90,8 +90,8 @@
     <!--<div class="loading_wrap">
         <img src="./images/loading.gif" alt="" class="loading">
     </div>-->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/spritespin.min.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/spritespin.min.js"></script>
     <script>
         //默认选择蓝色
         var SelectedCarColor = "blue_summit";
@@ -174,9 +174,9 @@
         function Load360(color) {
             $("#VRShowContent").hide();
             $("#360ShowContent").show();
-            var width = window.screen.availWidth;
+            var width = $('.container').width();
             var height = window.screen.availHeight;
-            var frames = SpriteSpin.sourceArray('/images/K8_360_comp_lm_' + color + '_v001/K8_360_comp_lm_' + color + '_v001__{frame}.jpg', { frame: [0, 60], digits: 5 });
+            var frames = SpriteSpin.sourceArray('./images/K8_360_comp_lm_' + color + '_v001/K8_360_comp_lm_' + color + '_v001__{frame}.jpg', { frame: [0, 60], digits: 5 });
             $("#360ShowContent").spritespin({
                 width: width,
                 height: height,
@@ -190,11 +190,11 @@
         function LoadCR(color) {
             $("#VRShowContent").show();
             $("#360ShowContent").hide();
-            var width = window.screen.availWidth;
+            var width = $('.container').width();
+//            var width = window.screen.availWidth;
             var height = window.screen.availHeight;
-            console.log(width, height);
-            $("#VRShowContent").css("height", (height-180)+"px");
-            $("#VRShowContent").attr("src", "vr/K8_360_comp_lm_" + color + "_v001/index.html");
+            $("#VRShowContent").css("height", (height-65)+"px");
+            $("#VRShowContent").attr("src", "./vr/K8_360_comp_lm_" + color + "_v001/index.html");
         }
         function Switchover(obj) {
             if ($(obj).text() == "点击进入内饰页") {
