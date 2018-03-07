@@ -1,3 +1,9 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    will-change:transform;
+}
 
 .container .logo {
     background: #191919;
@@ -14,7 +20,7 @@
     text-align: center;
     background-color: #222121;
     box-sizing: border-box;
-    font-size: 13px;
+    font-size: 15px;
     font-family: PingFangSC-Medium;
     height: 35px;
     line-height: 35px;
@@ -27,6 +33,7 @@
     top: 0;
     width: 100%;
     z-index: 9;
+    max-width: inherit;
 }
 
 .container .menu .menu_item.active_menu {
@@ -55,7 +62,7 @@
     overflow-x: auto;
     white-space: nowrap;
     padding: 13px 30px 13px 10px;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .container .sub_menu .sub_menu_item {
@@ -70,6 +77,7 @@
     background-color: #fff;
     border-radius: 50%;
     margin-right: 2px;
+    vertical-align: -2px;
 }
 
 .container .sub_menu .col.blue.sub_menu_item:before {
@@ -232,7 +240,7 @@
     margin-left: -24px;
 }
 
-/*.loading {
+.loading {
     position: absolute;
     width: 280px;
     top: 50%;
@@ -249,8 +257,8 @@
     right: 0;
     background-color: #1B1D1C;
     z-index: 9;
-    display: none;
-}*/
+    /*display: none;*/
+}
 
 .container .footer {
     height: 45px;
@@ -263,6 +271,7 @@
     position: fixed;
     bottom: 0px;
     width: 100%;
+    max-width: inherit;
 }
 
 .vr_content {
@@ -270,7 +279,80 @@
     width: 100%;
     position: fixed;
     z-index: -1;
-    top: 135px;
+    top: 65px;
     bottom: 0px;
     height: 100%;
+}
+
+.container .inner_head {
+    display: none;
+}
+
+.boxLoading {
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.boxLoading:before {
+    content: '';
+    width: 50px;
+    height: 5px;
+    background: #000;
+    opacity: 0.1;
+    position: absolute;
+    top: 59px;
+    left: 0;
+    border-radius: 50%;
+    animation: shadow .5s linear infinite;
+}
+
+.boxLoading:after {
+    content: '';
+    width: 50px;
+    height: 50px;
+    background: #3333d3;
+    animation: animate .5s linear infinite;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 3px;
+}
+
+@keyframes animate {
+    17% {
+        border-bottom-right-radius: 3px;
+    }
+    25% {
+        transform: translateY(9px) rotate(22.5deg);
+    }
+    50% {
+        transform: translateY(18px) scale(1, .9) rotate(45deg);
+        border-bottom-right-radius: 40px;
+    }
+    75% {
+        transform: translateY(9px) rotate(67.5deg);
+    }
+    100% {
+        transform: translateY(0) rotate(90deg);
+    }
+}
+
+
+@keyframes shadow {
+    0%, 100% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(1.2, 1);
+    }
+}
+
+.container .outside_sub_menu {
+    position: relative;
 }
