@@ -31,10 +31,10 @@
             <div class="outside_sub_menu">
                 <div class="sub_menu clear">
                     <div class="sub_menu_wrap">
-                        <span carcolor="blue" class="sub_menu_item col blue active_item" data-url="./images/1.jpg">地中海蓝</span>
-                        <span carcolor="black" class="sub_menu_item col black" data-url="./images/2.jpg">北极黑</span>
-                        <span carcolor="red" class="sub_menu_item col red" data-url="./images/3.jpg">波尔多红</span>
-                        <span carcolor="brown" class="sub_menu_item col brown" data-url="./images/4.jpg">阿布扎比棕</span>
+                        <span carcolor="blue_summit" class="sub_menu_item col blue active_item" data-url="./images/1.jpg">地中海蓝</span>
+                        <span carcolor="black_limited" class="sub_menu_item col black" data-url="./images/2.jpg">北极黑</span>
+                        <span carcolor="red_summit" class="sub_menu_item col red" data-url="./images/3.jpg">波尔多红</span>
+                        <span carcolor="brown_overland" class="sub_menu_item col brown" data-url="./images/4.jpg">阿布扎比棕</span>
                     </div>
                     <div class="show_more">
                         <img src="./images/CombinedShape.png" alt="">
@@ -133,14 +133,10 @@
     <script>
         //默认选择蓝色
         var SelectedCarColor = "blue_summit";
-        //轮毂
-        var SelectedCarHub = "summit";
-        //内饰颜色
-        var SelectedCarInteriorColor = "white";
-
         var $innerHead = $('.inner_head');
         var $head = $('.header');
         var $boxLoading = $('.boxLoading');
+
         $(document).ready(function () {
             var $menuItem = $('.menu_item');
             var $subMenu = $('.sub_menu');
