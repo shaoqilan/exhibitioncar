@@ -7,15 +7,15 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="format-detection" content="telephone=no,address=no" />
-    <title>首页</title>
+    <title>Jeep K8大指挥官</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
     <style type="text/css">
-        .loading {
-            background: url('images/loading.gif') no-repeat 50% 20%;
-            background-size: 60%;
-            background-color: #1b1d1c;
-        }
+        /*.loading {*/
+            /*background: url('images/loading.gif') no-repeat 50% 20%;*/
+            /*background-size: 60%;*/
+            /*background-color: #1b1d1c;*/
+        /*}*/
         .spritespin-instance {
             margin: 0px;
         }
@@ -24,22 +24,17 @@
 <body>
     <div class="container">
         <div class="header">
-            <div class="logo"><span>Jeep K8大指挥官</span></div>
+            <!--<div class="logo"><span>Jeep K8大指挥官</span></div>-->
             <div class="menu">
                 <span class="menu_item">换色</span><span class="menu_item">轮毂</span><span class="menu_item">配置</span>
             </div>
             <div class="outside_sub_menu">
                 <div class="sub_menu clear">
                     <div class="sub_menu_wrap">
-                        <span carcolor="blue_summit" class="sub_menu_item col blue active_item" data-url="./images/1.jpg">蓝色</span>
-                        <span carcolor="black_limited" class="sub_menu_item col black" data-url="./images/2.jpg">黑色</span>
-                        <span carcolor="red_summit" class="sub_menu_item col red" data-url="./images/3.jpg">红色</span>
-                        <span carcolor="brown_overland" class="sub_menu_item col brown" data-url="./images/4.jpg">棕色</span>
-                        <span carcolor="blue_summit" class="sub_menu_item col silver">银色</span>
-                        <span carcolor="blue_summit" class="sub_menu_item col champagne">香槟色</span>
-                        <span carcolor="blue_summit" class="sub_menu_item col grey">灰色</span>
-                        <span carcolor="blue_summit" class="sub_menu_item col silver" data-url="./images/5.jpg">银色</span>
-                        <span carcolor="blue_summit" class="sub_menu_item col champagne" data-url="./images/6.jpg">香槟色</span>
+                        <span carcolor="blue" class="sub_menu_item col blue active_item" data-url="./images/1.jpg">地中海蓝</span>
+                        <span carcolor="black" class="sub_menu_item col black" data-url="./images/2.jpg">北极黑</span>
+                        <span carcolor="red" class="sub_menu_item col red" data-url="./images/3.jpg">波尔多红</span>
+                        <span carcolor="brown" class="sub_menu_item col brown" data-url="./images/4.jpg">阿布扎比棕</span>
                     </div>
                     <div class="show_more">
                         <img src="./images/CombinedShape.png" alt="">
@@ -71,6 +66,48 @@
             </div>
 
         </div>
+        <div class="header inner_head">
+            <!--<div class="logo"><span>Jeep K8大指挥官</span></div>-->
+            <div class="menu">
+                <span class="menu_item">换色</span><span class="menu_item">配置</span><span class="menu_item">视角</span>
+            </div>
+            <div class="outside_sub_menu">
+                <div class="sub_menu clear">
+                    <div class="sub_menu_wrap">
+                        <span carcolor="blue_summit" class="sub_menu_item col blue active_item" data-url="./images/1.jpg">地中海蓝</span>
+                        <span carcolor="black_limited" class="sub_menu_item col black" data-url="./images/2.jpg">北极黑</span>
+                        <span carcolor="red_summit" class="sub_menu_item col red" data-url="./images/3.jpg">波尔多红</span>
+                        <span carcolor="brown_overland" class="sub_menu_item col brown" data-url="./images/4.jpg">阿布扎比棕</span>
+
+                    </div>
+                    <div class="show_more">
+                        <img src="./images/CombinedShape.png" alt="">
+                    </div>
+                </div>
+                <div class="sub_menu clear">
+                    <div class="sub_menu_wrap">
+                        <span class="sub_menu_item active_item" data-url="./images/3.jpg">方向盘</span>
+                        <span class="sub_menu_item" data-url="./images/4.jpg">仪表盘</span>
+                        <span class="sub_menu_item" data-url="./images/5.jpg">安全座椅</span>
+                    </div>
+                    <div class="show_more">
+                        <img src="./images/CombinedShape.png" alt="">
+                    </div>
+                </div>
+                <div class="sub_menu clear">
+                    <div class="sub_menu_wrap">
+                        <span class="sub_menu_item active_item" data-url="./images/5.jpg">驾驶位视角</span>
+                        <span class="sub_menu_item" data-url="./images/6.jpg">中排视角</span>
+                        <span class="sub_menu_item" data-url="./images/7.jpg">后排视角</span>
+                    </div>
+                    <div class="show_more">
+                        <img src="./images/CombinedShape.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
         <div class="content">
             <!--<img src="./images/0.jpg" alt="" class="car">-->
             <div id="360ShowContent"></div>
@@ -87,14 +124,23 @@
         </div>
         <div onclick="Switchover(this)" id="SwitchoverBtn" class="footer">点击进入内饰页</div>
     </div>
-    <!--<div class="loading_wrap">
+    <div class="loading_wrap">
         <img src="./images/loading.gif" alt="" class="loading">
-    </div>-->
+    </div>
+    <div class="boxLoading"></div>
     <script src="./js/jquery.min.js"></script>
     <script src="./js/spritespin.min.js"></script>
     <script>
         //默认选择蓝色
         var SelectedCarColor = "blue_summit";
+        //轮毂
+        var SelectedCarHub = "summit";
+        //内饰颜色
+        var SelectedCarInteriorColor = "white";
+
+        var $innerHead = $('.inner_head');
+        var $head = $('.header');
+        var $boxLoading = $('.boxLoading');
         $(document).ready(function () {
             var $menuItem = $('.menu_item');
             var $subMenu = $('.sub_menu');
@@ -104,6 +150,8 @@
             var lastIndex = 1;
             var num = 60;
             var speed = 50;
+            var $SwitchoverBtn = $('#SwitchoverBtn');
+
             // 顶上menu切换
             $menuItem.on('click', function (e) {
                 e.stopPropagation();
@@ -111,13 +159,18 @@
                 var idx = $me.index();
                 $menuItem.removeClass('active_menu');
                 $me.addClass('active_menu');
+                if($SwitchoverBtn.text() == '点击进入外观页') {
+                  idx = idx + 3;
+                }
                 $subMenu.removeClass('active_sub_menu');
                 $subMenu.eq(idx).addClass('active_sub_menu');
+
 
             });
             // 二级菜单
             $subMenuItem.on('click', function (e) {
                 e.stopPropagation();
+                $boxLoading.show();
                 var $me = $(this);
                 $subMenuItem.removeClass('active_item');
                 $me.addClass('active_item');
@@ -186,6 +239,8 @@
                 source: frames,
                 animate: false
             });
+            $('.loading_wrap').hide();
+            $boxLoading.hide();
         }
         function LoadCR(color) {
             $("#VRShowContent").show();
@@ -193,18 +248,26 @@
             var width = $('.container').width();
 //            var width = window.screen.availWidth;
             var height = window.screen.availHeight;
-            $("#VRShowContent").css("height", (height-118)+"px");
+            $("#VRShowContent").css("height", (height-65)+"px");
             $("#VRShowContent").attr("src", "./vr/K8_360_comp_lm_" + color + "_v001/index.html");
+            $('.container').css('height', $('iframe').height() + 64 + 'px');
+
         }
         function Switchover(obj) {
             if ($(obj).text() == "点击进入内饰页") {
                 $(obj).text("点击进入外观页");
                 //内饰
                 LoadCR(SelectedCarColor);
+
+                $head.hide();
+                $innerHead.show();
             } else {
                 $(obj).text("点击进入内饰页");
                 //外观
                 Load360(SelectedCarColor);
+
+                $innerHead.hide();
+                $head.show();
             }
         }
         function AutoSwitchover() {
