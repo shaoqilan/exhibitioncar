@@ -23,7 +23,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="header">
+        <div class="header outer_head">
             <!--<div class="logo"><span>Jeep K8大指挥官</span></div>-->
             <div class="menu">
                 <span class="menu_item">换色</span><span class="menu_item">轮毂</span><span class="menu_item">配置</span>
@@ -42,9 +42,9 @@
                 </div>
                 <div class="sub_menu clear">
                     <div class="sub_menu_wrap">
-                        <span class="sub_menu_item active_item" data-url="./images/3.jpg">轮毂1</span>
-                        <span class="sub_menu_item" data-url="./images/4.jpg">轮毂2</span>
-                        <span class="sub_menu_item" data-url="./images/5.jpg">轮毂3</span>
+                        <span class="sub_menu_item active_item" data-url="./images/3.jpg">Summit</span>
+                        <span class="sub_menu_item" data-url="./images/4.jpg">Overland</span>
+                        <span class="sub_menu_item" data-url="./images/5.jpg">Limited</span>
                     </div>
                     <div class="show_more">
                         <img src="./images/CombinedShape.png" alt="">
@@ -73,10 +73,9 @@
             <div class="outside_sub_menu">
                 <div class="sub_menu clear">
                     <div class="sub_menu_wrap">
-                        <span carcolor="blue_summit" class="sub_menu_item col blue active_item" data-url="./images/1.jpg">地中海蓝</span>
-                        <span carcolor="black_limited" class="sub_menu_item col black" data-url="./images/2.jpg">北极黑</span>
-                        <span carcolor="red_summit" class="sub_menu_item col red" data-url="./images/3.jpg">波尔多红</span>
-                        <span carcolor="brown_overland" class="sub_menu_item col brown" data-url="./images/4.jpg">阿布扎比棕</span>
+                        <span carcolor="blue_summit" class="sub_menu_item col blue active_item" data-url="./images/1.jpg">黑色</span>
+                        <span carcolor="black_limited" class="sub_menu_item col black" data-url="./images/2.jpg">灰色</span>
+                        <span carcolor="red_summit" class="sub_menu_item col red" data-url="./images/3.jpg">棕色</span>
 
                     </div>
                     <div class="show_more">
@@ -137,7 +136,7 @@
         var SelectedCarHubInteriorColor = "black";
 
         var $innerHead = $('.inner_head');
-        var $head = $('.header');
+        var $head = $('.outer_head');
         var $boxLoading = $('.boxLoading');
         $(document).ready(function () {
             var $menuItem = $('.menu_item');
@@ -225,7 +224,6 @@
                 $(obj).text("点击进入内饰页");
                 //外观
                 Load360(SelectedCarColor);
-
                 $innerHead.hide();
                 $head.show();
             }
