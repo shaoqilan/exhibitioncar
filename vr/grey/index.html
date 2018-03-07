@@ -31,7 +31,16 @@
 			</table>
 		</noscript>
 		<script>
-			embedpano({ swf: "tour.swf", xml: "tour.xml", target: "pano", html5: "auto", passQueryParameters: true });
+            var krpano;
+            embedpano({
+                swf: "tour.swf", xml: "tour.xml", target: "pano", html5: "auto", passQueryParameters: true, onready: function (e) {
+                    krpano = e;
+                }
+            });
+            function switchover(index) {
+                var scene = ["scene_20180307101229633", "scene_20180307101229587", "scene_20180307101229618"];
+                krpano.call("loadscene(" + scene[index] + ");");
+            }
 		</script>
 		<script type="text/javascript">
 			document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
