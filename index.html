@@ -64,7 +64,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
         <div class="header inner_head">
             <!--<div class="logo"><span>Jeep K8大指挥官</span></div>-->
@@ -107,7 +106,6 @@
             </div>
 
         </div>
-
         <div class="content">
             <!--<img src="./images/0.jpg" alt="" class="car">-->
             <div id="360ShowContent"></div>
@@ -130,13 +128,17 @@
     <div class="boxLoading"></div>
     <script src="./js/jquery.min.js"></script>
     <script src="./js/spritespin.min.js"></script>
-    <script>
+    <script type="text/javascript">
         //默认选择蓝色
-        var SelectedCarColor = "blue_summit";
+        var SelectedCarColor = "black";
+        //轮毂
+        var SelectedCarHub = "limited";
+        //内饰颜色
+        var SelectedCarHubInteriorColor = "black";
+
         var $innerHead = $('.inner_head');
         var $head = $('.header');
         var $boxLoading = $('.boxLoading');
-
         $(document).ready(function () {
             var $menuItem = $('.menu_item');
             var $subMenu = $('.sub_menu');
@@ -147,7 +149,6 @@
             var num = 60;
             var speed = 50;
             var $SwitchoverBtn = $('#SwitchoverBtn');
-
             // 顶上menu切换
             $menuItem.on('click', function (e) {
                 e.stopPropagation();
@@ -184,48 +185,13 @@
             });
             //加载默认颜色的360
             AutoSwitchover();
-            //$car.on('mousedown touchstart', function (e) {
-            //    "mousedown" == e.type && e.preventDefault();
-            //    e = e || window.event;
-            //    document.body.style.cursor = 'w-resize';
-            //    //记录当前按下的位置
-            //    var startX = e.clientX || e.originalEvent.touches[0].pageX;
-            //    $car.on('mousemove touchmove', function (evt) {
-            //        "mousemove" == evt.type && evt.preventDefault();
-            //        evt = evt || window.event;
-
-            //        var dis = evt.clientX || evt.originalEvent.touches[0].pageX - startX;
-
-            //        index = Math.floor(dis / speed) % num + lastIndex;
-
-
-            //        if (index < 0) {
-            //            index = index % num + num;
-
-            //        } else if (index >= num) {
-            //            index = index % num;
-            //        }
-
-            //        lastIndex = index;
-
-            //        $car.attr('src', 'images/' + index + '.jpg');
-            //    })
-            //}).on("mouseup touchend", function (e) {
-            //    "mouseup" == e.type && e.preventDefault();
-            //    $car.off('mousemove touchmove');
-            //})
-            //var images = new Array();
-            //for (var i = 0; i < 61; i++) {
-            //    images[i] = new Image();
-            //    images[i].src = 'https://cdn.upchina.com/HXSmartInvestmentH5/jeep/images/' + i + '.jpg';
-            //}
         })
-        function Load360(color) {
+        function Load360() {
             $("#VRShowContent").hide();
             $("#360ShowContent").show();
             var width = $('.container').width();
             var height = window.screen.availHeight;
-            var frames = SpriteSpin.sourceArray('./images/K8_360_comp_lm_' + color + '_v001/K8_360_comp_lm_' + color + '_v001__{frame}.jpg', { frame: [0, 60], digits: 5 });
+            var frames = SpriteSpin.sourceArray('./images/' + SelectedCarColor + '_' + SelectedCarHub + '/' + SelectedCarColor + '_' + SelectedCarHub + '_{frame}.jpg', { frame: [0, 60], digits: 5 });
             $("#360ShowContent").spritespin({
                 width: width,
                 height: height,
@@ -238,16 +204,14 @@
             $('.loading_wrap').hide();
             $boxLoading.hide();
         }
-        function LoadCR(color) {
+        function LoadCR() {
             $("#VRShowContent").show();
             $("#360ShowContent").hide();
             var width = $('.container').width();
-//            var width = window.screen.availWidth;
             var height = window.screen.availHeight;
             $("#VRShowContent").css("height", (height-65)+"px");
-            $("#VRShowContent").attr("src", "./vr/K8_360_comp_lm_" + color + "_v001/index.html");
+            $("#VRShowContent").attr("src", "./vr/" + SelectedCarHubInteriorColor + "/index.html");
             $('.container').css('height', $('iframe').height() + 64 + 'px');
-
         }
         function Switchover(obj) {
             if ($(obj).text() == "点击进入内饰页") {
