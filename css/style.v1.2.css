@@ -160,7 +160,7 @@
 }
 
 .container .content .describe {
-    position: absolute;
+    position: fixed;
     bottom: 45px;
     background-color: rgba(34, 33, 33, .6);
     color: #fff;
@@ -172,7 +172,7 @@
 
 .container .content .describe .des_title{
     font-size: 14px;
-    padding: 10px 16px 0;
+    /*padding: 10px 16px 0;*/
 }
 
 .container .content .describe .des_content {
