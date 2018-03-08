@@ -117,7 +117,7 @@
                     200N·m），欧洲进口技术+满足欧六排放标准，全新正时系统、全铝结构、众多高科技加持
                 </p>
             </div>
-            <div class="reserve lightSpeedIn">立即预定</div>
+            <div onclick="ToLink()" class="reserve lightSpeedIn">立即预定</div>
             <img src="./images/circulation.png" alt="" class="circulation">
         </div>
         <div onclick="Switchover(this)" id="SwitchoverBtn" class="footer">点击进入内饰页</div>
@@ -278,6 +278,10 @@
             $('.loading_wrap').hide();
             $(".box").hide();
             $(".box p").html("0%");
+        }
+        //预定
+        function ToLink() {
+            window.location = "http://i.bsitt.cn/3nEfQ";
         }
     </script>
 </body>
