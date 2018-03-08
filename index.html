@@ -8,8 +8,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="format-detection" content="telephone=no,address=no" />
-    <link href="css/reset.v1.6.css" rel="stylesheet" />
-    <link href="css/style.v1.6.css" rel="stylesheet" />
+    <link href="css/reset.v1.7.css" rel="stylesheet" />
+    <link href="css/style.v1.7.css" rel="stylesheet" />
     <style type="text/css">
         .spritespin-instance {
             margin: 0px;
@@ -111,6 +111,9 @@
     <div class="loading_wrap">
         <img src="./images/loading.gif" alt="" class="loading">
     </div>
+    <!--<div id="cover" style="position:fixed;top:0px;bottom:0px;width:100%;height:100%;z-index:9;">
+
+    </div>-->
     <script src="./js/jquery.min.js"></script>
     <script src="./js/spritespin.min.js"></script>
     <script type="text/javascript">
@@ -136,8 +139,6 @@
         var $describe = $('.describe');
         var $desTitle = $('.des_title');
         var $desContent = $('.des_content');
-
-
         $(document).ready(function () {
             var $menuItem = $('.menu_item');
             var $subMenu = $('.sub_menu');
@@ -268,10 +269,12 @@
                     console.log("加载完成");
                     $(".box").hide();
                     $(".box p").html("0%");
-                    $('.loading_wrap').hide();
+                    //$('.loading_wrap').hide();
                 }
             });
-            $('.loading_wrap').hide();
+            setTimeout(function () {
+                $('.loading_wrap').hide();
+            }, 3000);
 //            $boxLoading.hide();
         }
         function LoadVR() {
@@ -324,7 +327,7 @@
         }
         //加载完毕之后(VR)
         function HideLoading() {
-            $('.loading_wrap').hide();
+            //$('.loading_wrap').hide();
             $(".box").hide();
             $(".box p").html("0%");
             //设置场景
