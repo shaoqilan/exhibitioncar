@@ -133,6 +133,7 @@
 
 .container .content {
     position: relative;
+    background-color: #222121;
 }
 
 /*.container .content:after {*/
@@ -282,6 +283,7 @@
     top: 35px;
     bottom: 0px;
     height: 100%;
+    background-color: #222121;
 }
 
 .container .inner_head {
