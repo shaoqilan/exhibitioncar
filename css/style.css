@@ -5,11 +5,12 @@
     will-change:transform;
 }
 
+
 .container .logo {
     background: #191919;
     color: #fff;
     text-align: center;
-    font-size: 15px;
+    font-size: 18px;
     line-height: 30px;
     height: 30px;
 }
@@ -20,10 +21,10 @@
     text-align: center;
     background-color: #222121;
     box-sizing: border-box;
-    font-size: 15px;
+    font-size: 18px;
     font-family: PingFangSC-Medium;
-    height: 35px;
-    line-height: 35px;
+    height: 45px;
+    line-height: 45px;
     color: #fff;
     border: 1px solid #302E2E;
 }
@@ -61,7 +62,7 @@
     background-color: #fff;
     overflow-x: auto;
     white-space: nowrap;
-    padding: 13px 30px 13px 10px;
+    padding: 13px 10px 13px 10px;
     font-size: 12px;
 }
 
@@ -120,10 +121,13 @@
     background-image: linear-gradient(to right, rgba(255,255,255,0.4), rgba(255,255,255,1));
 }
 
-.container .sub_menu .show_more img {
-    width: 60%;
+.container .show_more {
     text-align: center;
     line-height: 40px;
+    position: absolute;
+    bottom: -3px;
+    right: 0;
+    display: none;
 }
 
 .container .content .car {
