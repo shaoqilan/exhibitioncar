@@ -122,11 +122,12 @@
             <img src="./images/circulation.png" alt="" class="circulation">
         </div>
         <div onclick="Switchover(this)" id="SwitchoverBtn" class="footer">点击进入内饰页</div>
+        <div class="box"><div class="boxLoading"></div><p>0%</p></div>
+
     </div>
     <div class="loading_wrap">
         <img src="./images/loading.gif" alt="" class="loading">
     </div>
-    <div class="boxLoading"></div>
     <script src="./js/jquery.min.js"></script>
     <script src="./js/spritespin.min.js"></script>
     <script>
@@ -134,7 +135,7 @@
         var SelectedCarColor = "blue_summit";
         var $innerHead = $('.inner_head');
         var $head = $('.outer_head');
-        var $boxLoading = $('.boxLoading');
+        var $boxLoading = $('.box');
 
         $(document).ready(function () {
             var $menuItem = $('.menu_item');
@@ -235,7 +236,7 @@
                 animate: false
             });
             $('.loading_wrap').hide();
-            $boxLoading.hide();
+//            $boxLoading.hide();
         }
         function LoadCR(color) {
             $("#VRShowContent").show();
@@ -271,6 +272,23 @@
                 LoadCR(SelectedCarColor);
             }
         }
+
+        function loading() {
+            var counter = 0;
+            var c = 0;
+            var i = setInterval(function(){
+                $(".box p").html(c + "%");
+
+                counter++;
+                c++;
+
+                if(counter == 101) {
+                    clearInterval(i);
+                }
+            }, 50);
+        }
+
+        loading();
     </script>
 </body>
 </html>
