@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="./css/style.css">
     <style type="text/css">
         /*.loading {*/
-            /*background: url('images/loading.gif') no-repeat 50% 20%;*/
-            /*background-size: 60%;*/
-            /*background-color: #1b1d1c;*/
+        /*background: url('images/loading.gif') no-repeat 50% 20%;*/
+        /*background-size: 60%;*/
+        /*background-color: #1b1d1c;*/
         /*}*/
         .spritespin-instance {
             margin: 0px;
@@ -31,10 +31,12 @@
             <div class="outside_sub_menu">
                 <div class="sub_menu clear">
                     <div class="sub_menu_wrap">
-                        <span carcolor="blue_summit" class="sub_menu_item col blue active_item" data-url="./images/1.jpg">地中海蓝</span>
-                        <span carcolor="black_limited" class="sub_menu_item col black" data-url="./images/2.jpg">北极黑</span>
-                        <span carcolor="red_summit" class="sub_menu_item col red" data-url="./images/3.jpg">波尔多红</span>
-                        <span carcolor="brown_overland" class="sub_menu_item col brown" data-url="./images/4.jpg">阿布扎比棕</span>
+                        <span carcolor="blue" class="sub_menu_item active_item" data-url="./images/1.jpg">地中海蓝</span>
+                        <span carcolor="black" class="sub_menu_item " data-url="./images/2.jpg">北极黑</span>
+                        <span carcolor="red" class="sub_menu_item " data-url="./images/3.jpg">波尔多红</span>
+                        <span carcolor="brown" class="sub_menu_item " data-url="./images/4.jpg">阿布扎比棕</span>
+                        <span carcolor="white" class="sub_menu_item " data-url="./images/4.jpg">喀纳斯白</span>
+                        <span carcolor="crystal" class="sub_menu_item " data-url="./images/4.jpg">西西里灰</span>
                     </div>
                     <div class="show_more">
                         <img src="./images/CombinedShape.png" alt="">
@@ -42,9 +44,9 @@
                 </div>
                 <div class="sub_menu clear">
                     <div class="sub_menu_wrap">
-                        <span class="sub_menu_item active_item" data-url="./images/3.jpg">Summit</span>
-                        <span class="sub_menu_item" data-url="./images/4.jpg">Overland</span>
-                        <span class="sub_menu_item" data-url="./images/5.jpg">Limited</span>
+                        <span carhub="summit" class="sub_menu_item active_item" data-url="./images/3.jpg">Summit</span>
+                        <span carhub="overland" class="sub_menu_item" data-url="./images/4.jpg">Overland</span>
+                        <span carhub="limited" class="sub_menu_item" data-url="./images/5.jpg">Limited</span>
                     </div>
                     <div class="show_more">
                         <img src="./images/CombinedShape.png" alt="">
@@ -64,7 +66,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
         <div class="header inner_head">
             <!--<div class="logo"><span>Jeep K8大指挥官</span></div>-->
@@ -74,10 +75,9 @@
             <div class="outside_sub_menu">
                 <div class="sub_menu clear">
                     <div class="sub_menu_wrap">
-                        <span carcolor="blue_summit" class="sub_menu_item col blue active_item" data-url="./images/1.jpg">黑色</span>
-                        <span carcolor="black_limited" class="sub_menu_item col black" data-url="./images/2.jpg">灰色</span>
-                        <span carcolor="red_summit" class="sub_menu_item col red" data-url="./images/3.jpg">棕色</span>
-
+                        <span vrcolor="black" class="sub_menu_item  active_item" data-url="./images/1.jpg">黑/黑</span>
+                        <span vrcolor="grey" class="sub_menu_item " data-url="./images/2.jpg">黑/灰</span>
+                        <span vrcolor="brown" class="sub_menu_item " data-url="./images/3.jpg">黑/棕</span>
                     </div>
                     <div class="show_more">
                         <img src="./images/CombinedShape.png" alt="">
@@ -85,9 +85,9 @@
                 </div>
                 <div class="sub_menu clear">
                     <div class="sub_menu_wrap">
-                        <span class="sub_menu_item active_item" data-url="./images/3.jpg">方向盘</span>
-                        <span class="sub_menu_item" data-url="./images/4.jpg">仪表盘</span>
-                        <span class="sub_menu_item" data-url="./images/5.jpg">安全座椅</span>
+                        <span vrplace="0" class="sub_menu_item active_item" data-url="./images/3.jpg">方向盘</span>
+                        <span vrplace="1" class="sub_menu_item" data-url="./images/4.jpg">仪表盘</span>
+                        <span vrplace="2" class="sub_menu_item" data-url="./images/5.jpg">安全座椅</span>
                     </div>
                     <div class="show_more">
                         <img src="./images/CombinedShape.png" alt="">
@@ -95,9 +95,9 @@
                 </div>
                 <div class="sub_menu clear">
                     <div class="sub_menu_wrap">
-                        <span class="sub_menu_item active_item" data-url="./images/5.jpg">驾驶位视角</span>
-                        <span class="sub_menu_item" data-url="./images/6.jpg">中排视角</span>
-                        <span class="sub_menu_item" data-url="./images/7.jpg">后排视角</span>
+                        <span vrangle="0" class="sub_menu_item active_item" data-url="./images/5.jpg">驾驶位视角</span>
+                        <span vrangle="1" class="sub_menu_item" data-url="./images/6.jpg">中排视角</span>
+                        <span vrangle="2" class="sub_menu_item" data-url="./images/7.jpg">后排视角</span>
                     </div>
                     <div class="show_more">
                         <img src="./images/CombinedShape.png" alt="">
@@ -106,7 +106,6 @@
             </div>
 
         </div>
-
         <div class="content">
             <!--<img src="./images/0.jpg" alt="" class="car">-->
             <div id="360ShowContent"></div>
@@ -128,11 +127,23 @@
     <div class="loading_wrap">
         <img src="./images/loading.gif" alt="" class="loading">
     </div>
+<<<<<<< HEAD
+=======
+    <!--<div class="boxLoading"></div>-->
+>>>>>>> 59719a69abe81288bfce47365e95322b70190e57
     <script src="./js/jquery.min.js"></script>
     <script src="./js/spritespin.min.js"></script>
-    <script>
+    <script type="text/javascript">
         //默认选择蓝色
-        var SelectedCarColor = "blue_summit";
+        var SelectedCarColor = "blue";
+        //轮毂
+        var SelectedCarHub = "summit";
+        //内饰颜色
+        var SelectedCarHubInteriorColor = "black";
+        //内饰选择的角度
+        var SelectedCarHubInteriorAngle = 0;
+        //内饰选择的位置
+        var SelectedCarHubInteriorPlace = [0, 0, 0];
         var $innerHead = $('.inner_head');
         var $head = $('.outer_head');
         var $boxLoading = $('.box');
@@ -147,7 +158,6 @@
             var num = 60;
             var speed = 50;
             var $SwitchoverBtn = $('#SwitchoverBtn');
-
             // 顶上menu切换
             $menuItem.on('click', function (e) {
                 e.stopPropagation();
@@ -155,18 +165,16 @@
                 var idx = $me.index();
                 $menuItem.removeClass('active_menu');
                 $me.addClass('active_menu');
-                if($SwitchoverBtn.text() == '点击进入外观页') {
-                  idx = idx + 3;
+                if ($SwitchoverBtn.text() == '点击进入外观页') {
+                    idx = idx + 3;
                 }
                 $subMenu.removeClass('active_sub_menu');
                 $subMenu.eq(idx).addClass('active_sub_menu');
-
-
             });
             // 二级菜单
             $subMenuItem.on('click', function (e) {
                 e.stopPropagation();
-                $boxLoading.show();
+                //$boxLoading.show();
                 var $me = $(this);
                 $subMenuItem.removeClass('active_item');
                 $me.addClass('active_item');
@@ -179,53 +187,35 @@
                 //判断是否是颜色的选择
                 if ($me.attr("carcolor") != undefined) {
                     SelectedCarColor = $me.attr("carcolor");
-                    AutoSwitchover();
+                    Load360();
+                }
+                //轮毂
+                if ($me.attr("carhub") != undefined) {
+                    SelectedCarHub = $me.attr("carhub");
+                    Load360();
+                }
+                //内饰颜色
+                if ($me.attr("vrcolor") != undefined) {
+                    SelectedCarHubInteriorColor = $me.attr("vrcolor");
+                    LoadVR();
+                }
+                //内饰角度
+                if ($me.attr("vrangle") != undefined) {
+                    var SelectedCarHubInteriorAngle = parseInt($me.attr("vrangle"));
+                    //调用if里面的方法
+                    $("#VRShowContent")[0].contentWindow.switchover(SelectedCarHubInteriorAngle);
                 }
             });
             //加载默认颜色的360
-            AutoSwitchover();
-            //$car.on('mousedown touchstart', function (e) {
-            //    "mousedown" == e.type && e.preventDefault();
-            //    e = e || window.event;
-            //    document.body.style.cursor = 'w-resize';
-            //    //记录当前按下的位置
-            //    var startX = e.clientX || e.originalEvent.touches[0].pageX;
-            //    $car.on('mousemove touchmove', function (evt) {
-            //        "mousemove" == evt.type && evt.preventDefault();
-            //        evt = evt || window.event;
-
-            //        var dis = evt.clientX || evt.originalEvent.touches[0].pageX - startX;
-
-            //        index = Math.floor(dis / speed) % num + lastIndex;
-
-
-            //        if (index < 0) {
-            //            index = index % num + num;
-
-            //        } else if (index >= num) {
-            //            index = index % num;
-            //        }
-
-            //        lastIndex = index;
-
-            //        $car.attr('src', 'images/' + index + '.jpg');
-            //    })
-            //}).on("mouseup touchend", function (e) {
-            //    "mouseup" == e.type && e.preventDefault();
-            //    $car.off('mousemove touchmove');
-            //})
-            //var images = new Array();
-            //for (var i = 0; i < 61; i++) {
-            //    images[i] = new Image();
-            //    images[i].src = 'https://cdn.upchina.com/HXSmartInvestmentH5/jeep/images/' + i + '.jpg';
-            //}
+            Load360();
         })
-        function Load360(color) {
+        function Load360() {
             $("#VRShowContent").hide();
             $("#360ShowContent").show();
-            var width = $('.container').width();
-            var height = window.screen.availHeight;
-            var frames = SpriteSpin.sourceArray('./images/K8_360_comp_lm_' + color + '_v001/K8_360_comp_lm_' + color + '_v001__{frame}.jpg', { frame: [0, 60], digits: 5 });
+            var width = window.screen.availWidth;
+            var height = (width / 9) * 16;
+            var frames = SpriteSpin.sourceArray('./images/' + SelectedCarColor + '_' + SelectedCarHub + '/' + SelectedCarColor + '_' + SelectedCarHub + '_{frame}.jpg', { frame: [0, 60], digits: 3 });
+            var loadIndex = 0;
             $("#360ShowContent").spritespin({
                 width: width,
                 height: height,
@@ -233,44 +223,56 @@
                 module: "360",
                 sense: -1,
                 source: frames,
-                animate: false
+                animate: false,
+                onInit: function () {
+                    //$boxLoading.show();
+                    $('.loading_wrap').show();
+                    loadIndex = 0;
+                    console.log("正在加载");
+                },
+                onProgress: function (a, b, c, d) {
+                    loadIndex = loadIndex + 1;
+                    var p = parseInt(parseFloat(parseFloat(loadIndex) / frames.length) * 100);
+                    console.log("加载" + p + "%");
+                },
+                onLoad: function () {
+                    console.log("加载完成");
+                    //$boxLoading.hide();
+                    $('.loading_wrap').hide();
+                }
             });
             $('.loading_wrap').hide();
 //            $boxLoading.hide();
         }
-        function LoadCR(color) {
+        function LoadVR() {
             $("#VRShowContent").show();
             $("#360ShowContent").hide();
-            var width = $('.container').width();
-//            var width = window.screen.availWidth;
+            var width = window.screen.availWidth;
             var height = window.screen.availHeight;
-            $("#VRShowContent").css("height", (height-65)+"px");
-            $("#VRShowContent").attr("src", "./vr/K8_360_comp_lm_" + color + "_v001/index.html");
+            $("#VRShowContent").css("height", (height - 64) + "px");
+            $("#VRShowContent").attr("src", "./vr/" + SelectedCarHubInteriorColor + "/index.html");
             $('.container').css('height', $('iframe').height() + 64 + 'px');
-
+            //加载效果
+            $('.loading_wrap').show();
         }
         function Switchover(obj) {
             if ($(obj).text() == "点击进入内饰页") {
                 $(obj).text("点击进入外观页");
                 //内饰
-                LoadCR(SelectedCarColor);
-
+                LoadVR();
                 $head.hide();
                 $innerHead.show();
             } else {
                 $(obj).text("点击进入内饰页");
                 //外观
-                Load360(SelectedCarColor);
+                Load360();
                 $innerHead.hide();
                 $head.show();
             }
         }
-        function AutoSwitchover() {
-            if ($("#SwitchoverBtn").text() == "点击进入内饰页") {
-                Load360(SelectedCarColor);
-            } else {
-                LoadCR(SelectedCarColor);
-            }
+        //加载完毕之后
+        function HideLoading() {
+            $('.loading_wrap').hide();
         }
 
         function loading() {
