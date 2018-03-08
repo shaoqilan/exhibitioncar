@@ -31,12 +31,12 @@
             <div class="outside_sub_menu">
                 <div class="sub_menu clear">
                     <div class="sub_menu_wrap">
-                        <span carcolor="blue" class="sub_menu_item active_item" data-url="./images/1.jpg">地中海蓝</span>
-                        <span carcolor="black" class="sub_menu_item " data-url="./images/2.jpg">北极黑</span>
-                        <span carcolor="red" class="sub_menu_item " data-url="./images/3.jpg">波尔多红</span>
-                        <span carcolor="brown" class="sub_menu_item " data-url="./images/4.jpg">阿布扎比棕</span>
-                        <span carcolor="white" class="sub_menu_item " data-url="./images/4.jpg">喀纳斯白</span>
-                        <span carcolor="crystal" class="sub_menu_item " data-url="./images/4.jpg">西西里灰</span>
+                            <span carcolor="blue" class="sub_menu_item active_item" data-url="./images/1.jpg">地中海蓝</span>
+                            <span carcolor="black" class="sub_menu_item " data-url="./images/2.jpg">北极黑</span>
+                            <span carcolor="red" class="sub_menu_item " data-url="./images/3.jpg">波尔多红</span>
+                            <span carcolor="brown" class="sub_menu_item " data-url="./images/4.jpg">阿布扎比棕</span>
+                            <span carcolor="white" class="sub_menu_item " data-url="./images/4.jpg">喀纳斯白</span>
+                            <span carcolor="crystal" class="sub_menu_item " data-url="./images/4.jpg">西西里灰</span>
                     </div>
                 </div>
                 <div class="sub_menu clear">
@@ -46,16 +46,17 @@
                         <span carhub="limited" class="sub_menu_item" data-url="./images/5.jpg">Limited</span>
                     </div>
                 </div>
-                <!--<div class="sub_menu clear">-->
-                <!--<div class="sub_menu_wrap">-->
-                <!--<span class="sub_menu_item active_item" data-url="./images/5.jpg">行政外观</span>-->
-                <!--<span class="sub_menu_item" data-url="./images/6.jpg">发动机</span>-->
-                <!--<span class="sub_menu_item" data-url="./images/7.jpg">变速箱</span>-->
-                <!--<span class="sub_menu_item" data-url="./images/8.jpg">油耗</span>-->
-                <!--<span class="sub_menu_item" data-url="./images/9.jpg">人性化科技</span>-->
-                <!--<span class="sub_menu_item" data-url="./images/9.jpg">核心技术</span>-->
-                <!--</div>-->
-                <!--</div>-->
+                <div class="sub_menu clear" style="display: none">
+                    <div class="sub_menu_wrap">
+                        <span class="sub_menu_item active_item" data-url="./images/5.jpg">行政外观</span>
+                        <span class="sub_menu_item" data-url="./images/6.jpg">发动机</span>
+                        <span class="sub_menu_item" data-url="./images/7.jpg">变速箱</span>
+                        <span class="sub_menu_item" data-url="./images/8.jpg">油耗</span>
+                        <span class="sub_menu_item" data-url="./images/9.jpg">人性化科技</span>
+                        <span class="sub_menu_item" data-url="./images/9.jpg">核心技术</span>
+                    </div>
+
+                </div>
                 <div class="show_more">
                     <img src="./images/CombinedShape.png" alt="">
                 </div>
@@ -77,16 +78,16 @@
                         <img src="./images/CombinedShape.png" alt="">
                     </div>
                 </div>
-                <!--<div class="sub_menu clear">-->
-                <!--<div class="sub_menu_wrap">-->
-                <!--<span vrplace="0" class="sub_menu_item active_item" data-url="./images/3.jpg">方向盘</span>-->
-                <!--<span vrplace="1" class="sub_menu_item" data-url="./images/4.jpg">仪表盘</span>-->
-                <!--<span vrplace="2" class="sub_menu_item" data-url="./images/5.jpg">安全座椅</span>-->
-                <!--</div>-->
-                <!--<div class="show_more">-->
-                <!--<img src="./images/CombinedShape.png" alt="">-->
-                <!--</div>-->
-                <!--</div>-->
+                <div class="sub_menu clear" style="display: none">
+                    <div class="sub_menu_wrap">
+                        <span vrplace="0" class="sub_menu_item active_item" data-url="./images/3.jpg">方向盘</span>
+                        <span vrplace="1" class="sub_menu_item" data-url="./images/4.jpg">仪表盘</span>
+                        <span vrplace="2" class="sub_menu_item" data-url="./images/5.jpg">安全座椅</span>
+                    </div>
+                    <div class="show_more">
+                        <img src="./images/CombinedShape.png" alt="">
+                    </div>
+                </div>
                 <div class="sub_menu clear">
                     <div class="sub_menu_wrap">
                         <span vrangle="0" class="sub_menu_item active_item" data-url="./images/5.jpg">驾驶位视角</span>
@@ -207,7 +208,7 @@
 
             $('.sub_menu_wrap').on('scroll', function () {
                 var $me = $(this);
-                if (shapeFlag) {
+                if(shapeFlag) {
                     if (!scrollTimer) {
                         scrollTimer = setTimeout(function () {
                             console.log($me.scrollLeft())
@@ -263,7 +264,7 @@
                 }
             });
             $('.loading_wrap').hide();
-            //            $boxLoading.hide();
+//            $boxLoading.hide();
         }
         function LoadVR() {
             $("#VRShowContent").show();
@@ -276,8 +277,8 @@
             //加载效果
             $(".box").show();
             var pro = 1;
-            var t = setInterval(function () {
-                pro = parseInt(pro + (Math.random() * 10));
+            var t= setInterval(function () {
+                pro =parseInt(pro + (Math.random()*10));
                 if (pro > 90) {
                     pro = 91;
                 }
@@ -306,21 +307,23 @@
             $(".box").hide();
             $(".box p").html("0%");
         }
+
+
         function calWidth() {
             var temp = 0;
             totalWidth = 0
-            $subMenuItem.each(function (i, v) {
-                temp += $(v).width() ? $(v).width() + 20 : 0;
+            $subMenuItem.each(function(i, v) {
+                temp += $(v).width()?$(v).width()+ 20 : 0;
             })
             totalWidth += temp + 10 + 10;
-            if (totalWidth > $('.container').width()) {
+            if(totalWidth > $('.container').width()) {
                 shapeFlag = true;
                 $showMore.show();
             } else {
                 shapeFlag = false;
                 $showMore.hide();
             }
-            console.log(totalWidth, shapeFlag);
+            console.log(totalWidth , shapeFlag);
         }
     </script>
 </body>

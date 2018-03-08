@@ -125,9 +125,13 @@
     text-align: center;
     line-height: 40px;
     position: absolute;
-    bottom: -3px;
+    bottom: 1px;
     right: 0;
     display: none;
+}
+
+.container .show_more img {
+    width: 25px;
 }
 
 .container .content .car {
