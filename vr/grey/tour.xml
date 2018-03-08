@@ -1,5 +1,5 @@
 ﻿<krpano version="1.16" title="全景案例" onstart="startup();">
-  <include url="skin/vtourskin.xml" />
+  
   <!-- set skin settings: bingmaps? gyro? thumbnail controlling? tooltips? -->
   <skin_settings bingmaps="false" 
                  bingmaps_key="" 
