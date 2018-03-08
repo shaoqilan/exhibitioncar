@@ -122,15 +122,10 @@
         </div>
         <div onclick="Switchover(this)" id="SwitchoverBtn" class="footer">点击进入内饰页</div>
         <div class="box"><div class="boxLoading"></div><p>0%</p></div>
-
     </div>
     <div class="loading_wrap">
         <img src="./images/loading.gif" alt="" class="loading">
     </div>
-<<<<<<< HEAD
-=======
-    <!--<div class="boxLoading"></div>-->
->>>>>>> 59719a69abe81288bfce47365e95322b70190e57
     <script src="./js/jquery.min.js"></script>
     <script src="./js/spritespin.min.js"></script>
     <script type="text/javascript">
@@ -225,24 +220,23 @@
                 source: frames,
                 animate: false,
                 onInit: function () {
-                    //$boxLoading.show();
-                    $('.loading_wrap').show();
+                    $(".box").show();
                     loadIndex = 0;
                     console.log("正在加载");
                 },
                 onProgress: function (a, b, c, d) {
                     loadIndex = loadIndex + 1;
                     var p = parseInt(parseFloat(parseFloat(loadIndex) / frames.length) * 100);
-                    console.log("加载" + p + "%");
+                    $(".box p").html(p + "%");
                 },
                 onLoad: function () {
                     console.log("加载完成");
-                    //$boxLoading.hide();
+                    //$(".box").hide();
+                    $(".box p").html("0%");
                     $('.loading_wrap').hide();
                 }
             });
             $('.loading_wrap').hide();
-//            $boxLoading.hide();
         }
         function LoadVR() {
             $("#VRShowContent").show();
@@ -253,7 +247,16 @@
             $("#VRShowContent").attr("src", "./vr/" + SelectedCarHubInteriorColor + "/index.html");
             $('.container').css('height', $('iframe').height() + 64 + 'px');
             //加载效果
-            $('.loading_wrap').show();
+            $(".box").show();
+            var pro = 1;
+            var t= setInterval(function () {
+                pro =parseInt(pro + (Math.random()*10));
+                if (pro > 90) {
+                    pro = 91;
+                }
+                $(".box p").html(pro + "%");
+                clearInterval(t);
+            }, 1000);
         }
         function Switchover(obj) {
             if ($(obj).text() == "点击进入内饰页") {
@@ -273,24 +276,9 @@
         //加载完毕之后
         function HideLoading() {
             $('.loading_wrap').hide();
+            $(".box").hide();
+            $(".box p").html("0%");
         }
-
-        function loading() {
-            var counter = 0;
-            var c = 0;
-            var i = setInterval(function(){
-                $(".box p").html(c + "%");
-
-                counter++;
-                c++;
-
-                if(counter == 101) {
-                    clearInterval(i);
-                }
-            }, 50);
-        }
-
-        loading();
     </script>
 </body>
 </html>
