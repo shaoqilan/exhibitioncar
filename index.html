@@ -7,9 +7,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="format-detection" content="telephone=no,address=no" />
-    <title>全新Jeep大指挥官VR赏车</title>
-    <link href="css/reset.v1.3.css" rel="stylesheet" />
-    <link href="css/style.v1.3.css" rel="stylesheet" />
+    <link href="css/reset.v1.5.css" rel="stylesheet" />
+    <link href="css/style.v1.5.css" rel="stylesheet" />
     <style type="text/css">
         .spritespin-instance {
             margin: 0px;
@@ -45,7 +44,7 @@
                     <div class="sub_menu_wrap">
                         <span class="sub_menu_item active_item" data-title="动感大气" data-content="源自大切诺基的豪华大气的旗舰家族设计语言传承：家族式7孔格栅设计、4轮梯形轮眉、粗壮的肩线眼神至D柱4873/1892/1738mm大气车身尺寸，2800mm长轴距外观风格刚中带柔，在平面中凸显雕塑感">动感大气</span>
                         <span class="sub_menu_item" data-title="精湛高科技" data-content="同级唯一全系标配全LED灯组，远近光灯+日行灯+尾灯，采用最流行的LED光源">精湛高科技</span>
-                        <span class="sub_menu_item" data-title="豪华空间感" data-content="车身漆面应用玛莎拉蒂的色彩配方门板设计由灰色装饰缝线、亚光电镀镶边、棕色实木饰条组成">精湛高科技</span>
+                        <span class="sub_menu_item" data-title="豪华空间感" data-content="车身漆面应用玛莎拉蒂的色彩配方门板设计由灰色装饰缝线、亚光电镀镶边、棕色实木饰条组成">豪华空间感</span>
                         <span class="sub_menu_item" data-title="动力" data-content="超强心脏2.0T+9AT汽油发动机最领先六大技术，首次集成于一台发动机最强民用2.0T较同级，性能领先15%，排放标准领先3年8秒8升黄金平衡">动力</span>
                         <span class="sub_menu_item" data-title="安全" data-content="以欧盟和美国最高安全标准打造IIHS美国高速公路安全协会及E-NCAP欧盟安全认证中心最高标准打造77年史上最硬Jeep：76%高强度钢材车身80项主被动安全科技">安全</span>
                         <span class="sub_menu_item" data-title="四驱" data-content="薛定谔的四驱，守护和燃油经济兼得4X4=17种路况下的默默守护全场和、全天候、全路况环境下提供最安全安心的驾驶出行">四驱</span>
@@ -158,6 +157,7 @@
                     idx = idx + 3;
                 }
                 $subMenu.removeClass('active_sub_menu');
+                console.log($subMenu[0]);
                 $subMenu.eq(idx).addClass('active_sub_menu');
                 // 计算菜单宽度
                  calWidth();
@@ -166,9 +166,13 @@
                     $describe.hide();
                 } else if (innerOrOuter()){
                     var $sp = $('.sub_config_1').find('span').eq(0);
+                    $('.sub_config_1').find('span').removeClass("active_item");
+                    $sp.addClass("active_item");
                     renderText($sp.data('title'), $sp.data('content'))
                 } else {
                     var $te = $('.sub_config_2').find('span').eq(0);
+                    $('.sub_config_2').find('span').removeClass("active_item");
+                    $te.addClass("active_item");
                     renderText($te.data('title'), $te.data('content'))
                 }
             });
