@@ -41,7 +41,7 @@
                         <span carhub="limited" class="sub_menu_item" data-url="./images/5.jpg">Limited</span>
                     </div>
                 </div>
-                <div class="sub_menu clear">
+                <div class="sub_menu sub_config_1 clear">
                     <div class="sub_menu_wrap">
                         <span class="sub_menu_item active_item" data-title="动感大气" data-content="源自大切诺基的豪华大气的旗舰家族设计语言传承：家族式7孔格栅设计、4轮梯形轮眉、粗壮的肩线眼神至D柱4873/1892/1738mm大气车身尺寸，2800mm长轴距外观风格刚中带柔，在平面中凸显雕塑感">行政外观</span>
                         <span class="sub_menu_item" data-title="精湛高科技" data-content="同级唯一全系标配全LED灯组，远近光灯+日行灯+尾灯，采用最流行的LED光源">发动机</span>
@@ -70,7 +70,7 @@
                         <span vrcolor="black" class="sub_menu_item " data-url="./images/3.jpg">黑/黑</span>
                     </div>
                 </div>
-                <div class="sub_menu clear">
+                <div class="sub_menu sub_config_2 clear">
                     <div class="sub_menu_wrap">
                         <span vrplace="0" class="sub_menu_item active_item" data-title="人机工程" data-content="<P>空间：同级最大三排头部空间；同级最大第三排调节角度范围；最长座椅靠垫；最优秀第三排腿部空间，最平坦第三排地板</p><p>隐私：同级唯一后排遮阳帘+隐私玻璃</p><P>视野：同级最大1.23平米全景天窗，同级最佳第三排视野</p>">方向盘</span>
                         <span vrplace="1" class="sub_menu_item" data-title="材质" data-content="材质：同级唯一全三排麂皮打孔绒面/Nappa头层小牛皮座椅，同级唯一360度皮与真木包裹内饰">仪表盘</span>
@@ -133,7 +133,10 @@
         var $subMenuItem = $('.sub_menu_item');
         var $showMore = $('.show_more');
         var $SwitchoverBtn = $('#SwitchoverBtn');
-        var $describe = $('.describe')
+        var $describe = $('.describe');
+        var $desTitle = $('.des_title');
+        var $desContent = $('.des_content');
+
 
         $(document).ready(function () {
             var $menuItem = $('.menu_item');
@@ -143,8 +146,6 @@
             var lastIndex = 1;
             var num = 60;
             var speed = 50;
-            var $desTitle = $('.des_title');
-            var $desContent = $('.des_content');
 
             // 顶上menu切换
             $menuItem.on('click', function (e) {
@@ -163,6 +164,12 @@
 
                 if($me.text() != '配置') {
                     $describe.hide();
+                } else if (innerOrOuter()){
+                    var $sp = $('.sub_config_1').find('span').eq(0);
+                    renderText($sp.data('title'), $sp.data('content'))
+                } else {
+                    var $te = $('.sub_config_2').find('span').eq(0);
+                    renderText($te.data('title'), $te.data('content'))
                 }
             });
             // 二级菜单
@@ -175,10 +182,7 @@
                 console.log($me);
                 $car.attr('src', $me.data('url'));
                 if($me.data('title')) {
-                    $desTitle.text($me.data('title'));
-                    $desContent.html($me.data('content'));
-                    console.log(222);
-                    $('.describe').show();
+                    renderText($me.data('title'), $me.data('content'))
                 }
                 //判断是否是颜色的选择
                 if ($me.attr("carcolor") != undefined) {
@@ -310,6 +314,7 @@
                 $innerHead.hide();
                 $head.show();
                 $describe.hide();
+                $('.content').css({'height':'auto','padding-top': '0'});
             }
         }
         //加载完毕之后(VR)
@@ -344,6 +349,13 @@
             } else {
                 return true;
             }
+        }
+
+        // 文字描述
+        function renderText(eTitle,  eCon) {
+            $desTitle.text(eTitle);
+            $desContent.html(eCon);
+            $('.describe').show();
         }
     </script>
 </body>
