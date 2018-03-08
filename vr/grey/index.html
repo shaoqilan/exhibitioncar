@@ -35,6 +35,7 @@
             embedpano({
                 swf: "tour.swf", xml: "tour.xml", target: "pano", html5: "auto", passQueryParameters: true, onready: function (e) {
                     krpano = e;
+                    parent.HideLoading();
                 }
             });
             function switchover(index) {
