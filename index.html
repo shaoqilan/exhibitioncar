@@ -9,7 +9,7 @@
     <meta name="format-detection" content="telephone=no,address=no" />
     <title>Jeep K8大指挥官</title>
     <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link href="css/style.v1.0.css" rel="stylesheet" />
     <style type="text/css">
         /*.loading {*/
         /*background: url('images/loading.gif') no-repeat 50% 20%;*/
@@ -250,6 +250,9 @@
                 onProgress: function (a, b, c, d) {
                     loadIndex = loadIndex + 1;
                     var p = parseInt(parseFloat(parseFloat(loadIndex) / frames.length) * 100);
+                    if (p > 100) {
+                        p = 100;
+                    }
                     $(".box p").html(p + "%");
                 },
                 onLoad: function () {
