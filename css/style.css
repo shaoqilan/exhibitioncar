@@ -132,7 +132,6 @@
 }
 
 .container .content {
-    background-color: #222121;
     position: relative;
 }
 
@@ -283,7 +282,6 @@
     top: 35px;
     bottom: 0px;
     height: 100%;
-    background-color: #222121;
 }
 
 .container .inner_head {
@@ -316,14 +314,9 @@
 }
 
 .box p {
-    position: absolute;
-    bottom: 18px;
-    left: 10px;
     color: #fff;
-    text-align:center;
-    display:block;
-    width:42px;
-    font-size: 17px
+    font-size: 17px;
+    margin-top: 15px;
 }
 
 /* Safari */
