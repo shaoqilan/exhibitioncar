@@ -142,8 +142,6 @@
         var $combinedShape = $('.combined_shape');
         var $subMenuItem = $('.sub_menu_item');
         var $showMore = $('.show_more');
-
-
         $(document).ready(function () {
             var $menuItem = $('.menu_item');
             var $subMenu = $('.sub_menu');
@@ -198,17 +196,16 @@
                 }
                 //内饰角度
                 if ($me.attr("vrangle") != undefined) {
-                    var SelectedCarHubInteriorAngle = parseInt($me.attr("vrangle"));
+                    SelectedCarHubInteriorAngle = parseInt($me.attr("vrangle"));
                     //调用if里面的方法
                     $("#VRShowContent")[0].contentWindow.switchover(SelectedCarHubInteriorAngle);
                 }
+                MenuPitchOn();
             });
-
             var scrollTimer;
-
             $('.sub_menu_wrap').on('scroll', function () {
                 var $me = $(this);
-                if(shapeFlag) {
+                if (shapeFlag) {
                     if (!scrollTimer) {
                         scrollTimer = setTimeout(function () {
                             console.log($me.scrollLeft())
@@ -223,8 +220,9 @@
                     }
                 }
 
-            })
-
+            });
+            //菜单选中
+            MenuPitchOn();
             //加载默认颜色的360
             Load360();
         })
@@ -286,6 +284,15 @@
                 clearInterval(t);
             }, 1000);
         }
+        //处理菜单选中
+        function MenuPitchOn() {
+            $('.sub_menu_item').removeClass('active_item');
+            $('.sub_menu_item[carcolor="' + SelectedCarColor + '"]').addClass('active_item');
+            $('.sub_menu_item[carhub="' + SelectedCarHub + '"]').addClass('active_item');
+            $('.sub_menu_item[vrcolor="' + SelectedCarHubInteriorColor + '"]').addClass('active_item');
+            console.log($('.sub_menu_item[vrangle="' + SelectedCarHubInteriorAngle + '"]').length, SelectedCarHubInteriorAngle);
+            $('.sub_menu_item[vrangle="' + SelectedCarHubInteriorAngle + '"]').addClass('active_item');
+        }
         function Switchover(obj) {
             if ($(obj).text() == "点击进入内饰页") {
                 $(obj).text("点击进入外观页");
@@ -301,11 +308,13 @@
                 $head.show();
             }
         }
-        //加载完毕之后
+        //加载完毕之后(VR)
         function HideLoading() {
             $('.loading_wrap').hide();
             $(".box").hide();
             $(".box p").html("0%");
+            //设置场景
+            $("#VRShowContent")[0].contentWindow.switchover(SelectedCarHubInteriorAngle);
         }
         function calWidth() {
             var temp = 0;
