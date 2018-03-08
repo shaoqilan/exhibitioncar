@@ -310,6 +310,7 @@
         function Switchover(obj) {
             if ($(obj).text() == "点击进入内饰页") {
                 $(obj).text("点击进入外观页");
+                $(".circulation").hide();
                 //内饰
                 LoadVR();
                 $head.hide();
@@ -317,6 +318,7 @@
                 $describe.hide();
             } else {
                 $(obj).text("点击进入内饰页");
+                $(".circulation").show();
                 //外观
                 Load360();
                 $innerHead.hide();
@@ -352,9 +354,10 @@
 
         // 判断是在外观页还是内饰页 内饰页flase, 外观true
         function innerOrOuter() {
-            if($SwitchoverBtn.text() === '点击进入外观页'){
+            if ($SwitchoverBtn.text() === '点击进入外观页') {
                 return false;
             } else {
+                
                 return true;
             }
         }
