@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>全新Jeep大指挥官VR赏车</title>
     <meta http-equiv="content-type" content='text/html;charset=utf-8' />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -60,7 +59,7 @@
         <div class="header inner_head">
             <!--<div class="logo"><span>Jeep K8大指挥官</span></div>-->
             <div class="menu">
-                <span class="menu_item">换色</span><span class="menu_item">配置</span><span class="menu_item">视角</span>
+                <span class="menu_item">换色</span><span class="menu_item">视角</span><span class="menu_item">配置</span>
             </div>
             <div class="outside_sub_menu">
                 <div class="sub_menu clear">
@@ -70,13 +69,7 @@
                         <span vrcolor="black" class="sub_menu_item " data-url="./images/3.jpg">黑/黑</span>
                     </div>
                 </div>
-                <div class="sub_menu sub_config_2 clear">
-                    <div class="sub_menu_wrap">
-                        <span vrplace="0" class="sub_menu_item active_item" data-title="人机工程" data-content="<P>空间：同级最大三排头部空间；同级最大第三排调节角度范围；最长座椅靠垫；最优秀第三排腿部空间，最平坦第三排地板</p><p>隐私：同级唯一后排遮阳帘+隐私玻璃</p><P>视野：同级最大1.23平米全景天窗，同级最佳第三排视野</p>">人机工程</span>
-                        <span vrplace="1" class="sub_menu_item" data-title="材质" data-content="材质：同级唯一全三排麂皮打孔绒面/Nappa头层小牛皮座椅，同级唯一360度皮与真木包裹内饰">材质</span>
-                        <span vrplace="2" class="sub_menu_item" data-title="科技" data-content="<p>科技：更人性化的U-connect系统</p><p>听觉：第三排剧院级音箱</p><p>温度：第三排独立空调</P>">科技</span>
-                    </div>
-                </div>
+
                 <div class="sub_menu clear">
                     <div class="sub_menu_wrap">
                         <span vrangle="0" class="sub_menu_item active_item" data-url="./images/5.jpg">驾驶位视角</span>
@@ -85,6 +78,14 @@
                     </div>
 
                 </div>
+
+              <div class="sub_menu sub_config_2 clear">
+                <div class="sub_menu_wrap">
+                  <span vrplace="0" class="sub_menu_item active_item" data-title="人机工程" data-content="<P>空间：同级最大三排头部空间；同级最大第三排调节角度范围；最长座椅靠垫；最优秀第三排腿部空间，最平坦第三排地板</p><p>隐私：同级唯一后排遮阳帘+隐私玻璃</p><P>视野：同级最大1.23平米全景天窗，同级最佳第三排视野</p>">人机工程</span>
+                  <span vrplace="1" class="sub_menu_item" data-title="材质" data-content="材质：同级唯一全三排麂皮打孔绒面/Nappa头层小牛皮座椅，同级唯一360度皮与真木包裹内饰">材质</span>
+                  <span vrplace="2" class="sub_menu_item" data-title="科技" data-content="<p>科技：更人性化的U-connect系统</p><p>听觉：第三排剧院级音箱</p><p>温度：第三排独立空调</P>">科技</span>
+                </div>
+              </div>
                 <div class="show_more">
                     <img src="./images/CombinedShape.png" alt="" class="combined_shape">
                 </div>
@@ -354,7 +355,7 @@
             if ($SwitchoverBtn.text() === '点击进入外观页') {
                 return false;
             } else {
-                
+
                 return true;
             }
         }
@@ -362,7 +363,7 @@
         // 文字描述
         function renderText(eTitle,  eCon) {
 //            $desTitle.text(eTitle);
-            $desContent.html(eCon);
+            $desContent.html('更多配置详情，敬请期待<br /><br /><br />');
             $('.describe').show();
         }
     </script>
