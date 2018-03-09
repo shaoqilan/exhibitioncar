@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>全新Jeep大指挥官VR赏车</title>
     <meta http-equiv="content-type" content='text/html;charset=utf-8' />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -314,6 +315,7 @@
                 $head.hide();
                 $innerHead.show();
                 $describe.hide();
+                $showMore.hide();
             } else {
                 $(obj).text("点击进入内饰页");
                 $(".circulation").show();
@@ -323,6 +325,7 @@
                 $head.show();
                 $describe.hide();
                 $('.content').css({'height':'auto','padding-top': '0'});
+                $showMore.hide();
             }
         }
         //加载完毕之后(VR)
@@ -342,6 +345,7 @@
             totalWidth += temp + 10 + 10;
             if(totalWidth > $('.container').width()) {
                 shapeFlag = true;
+                console.log(1234)
                 $showMore.show();
             } else {
                 shapeFlag = false;
