@@ -96,6 +96,7 @@
         <div class="content">
             <!--<img src="./images/0.jpg" alt="" class="car">-->
             <div id="360ShowContent"></div>
+            <div id="showContent_top"></div>
             <iframe id="VRShowContent" frameborder="0" class="vr_content"></iframe>
             <div class="describe">
                 <p class="des_title"></p>
@@ -138,6 +139,9 @@
         var $describe = $('.describe');
         var $desTitle = $('.des_title');
         var $desContent = $('.des_content');
+        var data;
+        var dataTop;
+        var drawFlag = -1;
         $(document).ready(function () {
             var $menuItem = $('.menu_item');
             var $subMenu = $('.sub_menu');
@@ -193,11 +197,13 @@
                 if ($me.attr("carcolor") != undefined) {
                     SelectedCarColor = $me.attr("carcolor");
                     Load360();
+                    Load360Top();
                 }
                 //轮毂
                 if ($me.attr("carhub") != undefined) {
                     SelectedCarHub = $me.attr("carhub");
                     Load360();
+                    Load360Top();
                 }
                 //内饰颜色
                 if ($me.attr("vrcolor") != undefined) {
@@ -235,15 +241,81 @@
             MenuPitchOn();
             //加载默认颜色的360
             Load360();
+            Load360Top();
         })
         function Load360() {
+            $("#360ShowContent").on('mousemove touchmove', function () {
+                drawFlag = 0;
+            })
+
             $("#VRShowContent").hide();
             $("#360ShowContent").show();
-            var width = window.screen.availWidth;
+            var width = $('.container').width();
             var height = (width / 9) * 16;
-            var frames = SpriteSpin.sourceArray('./images/' + SelectedCarColor + '_' + SelectedCarHub + '/' + SelectedCarColor + '_' + SelectedCarHub + '_{frame}.jpg', { frame: [0, 60], digits: 3 });
+            var frames = SpriteSpin.sourceArray('./images/v004/K8_360_bg_ch_1080_1920_v004/K8_360_bg_ch_1080_1920_v004' + '.{frame}.png', { frame: [0, 60], digits: 4 });
             var loadIndex = 0;
-            $("#360ShowContent").spritespin({
+            data = $("#360ShowContent").spritespin({
+                width: width,
+                height: height,
+                behavior: "drag",
+                module: "360",
+                sense: -1,
+                source: frames,
+                animate: false,
+                framesX: 2,
+                onInit: function () {
+                    $(".box").show();
+                    loadIndex = 0;
+                    console.log("正在加载");
+                },
+                onProgress: function (a, b, c, d) {
+                    loadIndex = loadIndex + 1;
+                    var p = parseInt(parseFloat(parseFloat(loadIndex) / frames.length) * 100);
+                    if (p > 100) {
+                        p = 100;
+                    }
+                    $(".box p").html(p + "%");
+                },
+                onLoad: function () {
+                    console.log("加载完成");
+                    $(".box").hide();
+                    $(".box p").html("0%");
+                    //$('.loading_wrap').hide();
+                },
+                onFrame: function () {
+//                    console.log('www', this);
+                },
+                onDraw: function (t, p) {
+//                    console.log('eee', p);
+                    console.log('lll', p.frame);
+                    if(dataTop && p.frame && drawFlag === 0) {
+                        SpriteSpin.updateFrame(dataTop, p.frame);
+                    }
+                }
+            }).data("spritespin");
+
+            console.log('data', data);
+            $('.loading_wrap').hide();
+//            setTimeout(function () {
+//                $('.loading_wrap').hide();
+//            }, 3000);
+//            $boxLoading.hide();
+        }
+
+        function Load360Top() {
+
+            $("#showContent_top").on('mousemove touchmove', function () {
+                drawFlag = 1;
+            })
+
+
+            $("#VRShowContent").hide();
+            $("#showContent_top").show();
+            var width = $('.container').width();
+            var height = (width / 9) * 16;
+            var frames = SpriteSpin.sourceArray('./images/v004/K8_360_comp_lm_1080_1920_' + SelectedCarColor + '_v004/K8_360_comp_lm_1080_1920_'  + SelectedCarColor + '_v004' + '.{frame}.png', { frame: [0, 60], digits: 4 });
+            var loadIndex = 0;
+            dataTop = $("#showContent_top").spritespin({
                 width: width,
                 height: height,
                 behavior: "drag",
@@ -269,13 +341,21 @@
                     $(".box").hide();
                     $(".box p").html("0%");
                     //$('.loading_wrap').hide();
+                },
+                onDraw: function (t, p) {
+//                    console.log('eee', p);
+                    console.log('lll', p.frame)
+                    if(data && p.frame && drawFlag === 1) {
+                        SpriteSpin.updateFrame(data, p.frame);
+                    }
                 }
-            });
-            setTimeout(function () {
-                $('.loading_wrap').hide();
-            }, 3000);
+            }).data("spritespin");
+//            setTimeout(function () {
+//                $('.loading_wrap').hide();
+//            }, 3000);
 //            $boxLoading.hide();
         }
+
         function LoadVR() {
             $("#VRShowContent").show();
             $("#360ShowContent").hide();
@@ -321,6 +401,7 @@
                 $(".circulation").show();
                 //外观
                 Load360();
+                Load360Top();
                 $innerHead.hide();
                 $head.show();
                 $describe.hide();

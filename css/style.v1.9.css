@@ -349,3 +349,9 @@
 .container .outside_sub_menu {
     position: relative;
 }
+
+.container #showContent_top {
+    position: absolute!important;
+    top: 1%;
+    left: 0;
+}
