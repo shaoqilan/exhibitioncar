@@ -352,6 +352,14 @@
 
 .container #showContent_top {
     position: absolute!important;
-    top: 1%;
+    top: 0;
     left: 0;
+    z-index: 4;
+}
+
+.container #showContent_summit {
+  width: 100%;
+  position: absolute;
+  z-index: 3;
+  top: 0;
 }
