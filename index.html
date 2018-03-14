@@ -9,7 +9,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="format-detection" content="telephone=no,address=no" />
     <link href="css/reset.v1.9.css" rel="stylesheet" />
-    <link href="css/style.v1.9.css" rel="stylesheet" />
+    <link href="css/style.v2.0.css" rel="stylesheet" />
     <style type="text/css">
         .spritespin-instance {
             margin: 0px;
@@ -26,7 +26,7 @@
             <div class="outside_sub_menu">
                 <div class="sub_menu clear">
                     <div class="sub_menu_wrap">
-                            <span carcolor="blue" class="sub_menu_item active_item" data-url="./images/1.jpg">地中海蓝</span>
+                            <span carcolor="blue" class="sub_menu_item" data-url="./images/1.jpg">地中海蓝</span>
                             <span carcolor="black" class="sub_menu_item " data-url="./images/2.jpg">北极黑</span>
                             <span carcolor="red" class="sub_menu_item " data-url="./images/3.jpg">波尔多红</span>
                             <span carcolor="brown" class="sub_menu_item " data-url="./images/4.jpg">阿布扎比棕</span>
@@ -97,7 +97,8 @@
             <!--<img src="./images/0.jpg" alt="" class="car">-->
             <div id="360ShowContent"></div>
             <div id="showContent_top"></div>
-            <img id="showContent_summit" src="./images/v004/K8_360_comp_lm_1080_1920_summit_v004/K8_360_comp_lm_1080_1920_summit_v004.0000.png"/>
+            <div id="showContent_summit"></div>
+            <!--<img id="showContent_summit" src="./images/v004/K8_360_comp_lm_1080_1920_summit_v004/K8_360_comp_lm_1080_1920_summit_v004.0000.png"/>-->
             <iframe id="VRShowContent" frameborder="0" class="vr_content"></iframe>
             <div class="describe">
                 <p class="des_title"></p>
@@ -106,7 +107,8 @@
                     200N·m），欧洲进口技术+满足欧六排放标准，全新正时系统、全铝结构、众多高科技加持
                 </p>
             </div>
-            <div class="reserve lightSpeedIn"><a href="http://i.bsitt.cn/3nEfQ">立即预定</a></div>
+            <div class="reserve"><a href="http://i.bsitt.cn/3nEfQ">立即预定</a></div>
+            <div class="reserve leaveWords"><a href="http://i.bsitt.cn/3nEfQ">用户留言</a></div>
             <img src="./images/circulation.png" alt="" class="circulation">
         </div>
         <div onclick="Switchover(this)" id="SwitchoverBtn" class="footer">点击进入内饰页</div>
@@ -119,7 +121,7 @@
     <script src="./js/spritespin.min.js"></script>
     <script type="text/javascript">
         //默认选择蓝色
-        var SelectedCarColor = "blue";
+        var SelectedCarColor = "brown";
         //轮毂
         var SelectedCarHub = "summit";
         //内饰颜色
@@ -142,16 +144,12 @@
         var $desContent = $('.des_content');
         var data;
         var dataTop;
-        var drawFlag = -1;
+        var startNum = 0;
+        var endNum = 60;
         $(document).ready(function () {
             var $menuItem = $('.menu_item');
             var $subMenu = $('.sub_menu');
             var $car = $('.car');
-            var index = 1;
-            var lastIndex = 1;
-            var num = 60;
-            var speed = 50;
-            $('.reserve').css('right', '0');
             // 顶上menu切换
             $menuItem.on('click', function (e) {
                 e.stopPropagation();
@@ -243,17 +241,18 @@
             //加载默认颜色的360
             Load360();
             Load360Top();
+//            Load360Summit();
         })
         function Load360() {
-            $("#360ShowContent").on('mousemove touchmove', function () {
-                drawFlag = 0;
-            })
+            // $("#360ShowContent").on('mousemove touchmove', function () {
+            //     drawFlag = 0;
+            // })
 
             $("#VRShowContent").hide();
             $("#360ShowContent").show();
             var width = $('.container').width();
             var height = (width / 9) * 16;
-            var frames = SpriteSpin.sourceArray('./images/v004/K8_360_bg_ch_1080_1920_v004/K8_360_bg_ch_1080_1920_v004' + '.{frame}.png', { frame: [0, 60], digits: 4 });
+            var frames = SpriteSpin.sourceArray('./images/v004/K8_360_bg_ch_1080_1920_v004/K8_bg_' + '{frame}.png', { frame: [startNum, endNum], digits: 4 });
             var loadIndex = 0;
             data = $("#360ShowContent").spritespin({
                 width: width,
@@ -264,57 +263,52 @@
                 source: frames,
                 animate: false,
                 framesX: 2,
+//                frame: 30,
                 onInit: function () {
                     $(".box").show();
                     loadIndex = 0;
                     console.log("正在加载");
                 },
                 onProgress: function (a, b, c, d) {
-                    loadIndex = loadIndex + 1;
-                    var p = parseInt(parseFloat(parseFloat(loadIndex) / frames.length) * 100);
-                    if (p > 100) {
-                        p = 100;
-                    }
-                    $(".box p").html(p + "%");
+//                    loadIndex = loadIndex + 1;
+//                    var p = parseInt(parseFloat(parseFloat(loadIndex) / frames.length) * 100);
+//                    if (p > 100) {
+//                        p = 100;
+//                    }
+//                    $(".box p").html(p + "%");
                 },
                 onLoad: function () {
-                    console.log("加载完成");
-                    $(".box").hide();
-                    $(".box p").html("0%");
+//                    console.log("加载完成");
+//                    $(".box").hide();
+//                    $(".box p").html("0%");
                     //$('.loading_wrap').hide();
                 },
                 onFrame: function () {
 //                    console.log('www', this);
                 },
-                onDraw: function (t, p) {
-//                    console.log('eee', p);
-                    console.log('lll', p.frame);
-                    if(dataTop && p.frame && drawFlag === 0) {
-                        SpriteSpin.updateFrame(dataTop, p.frame);
-                    }
-                }
+//                onDraw: function (t, p) {
+////                    console.log('eee', p);
+////                    console.log('lll', p.frame);
+//                    if(dataTop && p.frame && drawFlag === 0) {
+//                        SpriteSpin.updateFrame(dataTop, p.frame);
+//                    }
+//                }
             }).data("spritespin");
 
-            console.log('data', data);
-            $('.loading_wrap').hide();
 //            setTimeout(function () {
-//                $('.loading_wrap').hide();
+                $('.loading_wrap').hide();
 //            }, 3000);
 //            $boxLoading.hide();
         }
 
         function Load360Top() {
 
-            $("#showContent_top").on('mousemove touchmove', function () {
-                drawFlag = 1;
-            })
-
 
             $("#VRShowContent").hide();
             $("#showContent_top").show();
             var width = $('.container').width();
             var height = (width / 9) * 16;
-            var frames = SpriteSpin.sourceArray('./images/v004/K8_360_comp_lm_1080_1920_' + SelectedCarColor + '_v004/K8_360_comp_lm_1080_1920_'  + SelectedCarColor + '_v004' + '.{frame}.png', { frame: [0, 60], digits: 4 });
+            var frames = SpriteSpin.sourceArray('./images/v004/' + SelectedCarColor + '_' + SelectedCarHub + '/K8_' + SelectedCarColor + '_' + SelectedCarHub + '_{frame}.png', { frame: [startNum, endNum], digits: 4 });
             var loadIndex = 0;
             dataTop = $("#showContent_top").spritespin({
                 width: width,
@@ -324,6 +318,7 @@
                 sense: -1,
                 source: frames,
                 animate: false,
+//                frame: 30,
                 onInit: function () {
                     $(".box").show();
                     loadIndex = 0;
@@ -344,22 +339,18 @@
                     //$('.loading_wrap').hide();
                 },
                 onDraw: function (t, p) {
-                    console.log('lll', p.frame)
-                    if(data && p.frame && drawFlag === 1) {
+                    console.log('frame', p.frame);
+                    if(data && p.frame) {
                         SpriteSpin.updateFrame(data, p.frame);
                     }
                 }
             }).data("spritespin");
         }
 
-
-        function Load360Summit() {
-
-        }
-
         function LoadVR() {
             $("#VRShowContent").show();
             $("#360ShowContent").hide();
+            $("#showContent_top").hide();
             var width = window.screen.availWidth;
             var height = window.screen.availHeight;
             $("#VRShowContent").css("height", (height - 64) + "px");
