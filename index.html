@@ -9,7 +9,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="format-detection" content="telephone=no,address=no" />
     <link href="css/reset.v1.9.css" rel="stylesheet" />
-    <link href="css/style.v2.0.css" rel="stylesheet" />
+    <link href="css/style.v2.1.css" rel="stylesheet" />
     <style type="text/css">
         .spritespin-instance {
             margin: 0px;
@@ -112,10 +112,11 @@
             <img src="./images/circulation.png" alt="" class="circulation">
         </div>
         <div onclick="Switchover(this)" id="SwitchoverBtn" class="footer">点击进入内饰页</div>
-        <div class="box"><div class="boxLoading"></div><p>0%</p></div>
+        <div class="box_fix"><div class="box"><div class="boxLoading"></div><p>0%</p></div></div>
     </div>
     <div class="loading_wrap">
-        <img src="./images/loading.gif" alt="" class="loading_in">
+        <!--<img src="./images/loading.gif" alt="" class="loading_in">-->
+        <img src="./images/launch.jpg" alt="" class="loading_in">
     </div>
     <script src="./js/jquery.min.js"></script>
     <script src="./js/spritespin.min.js"></script>
@@ -132,7 +133,7 @@
         var SelectedCarHubInteriorPlace = [0, 0, 0];
         var $innerHead = $('.inner_head');
         var $head = $('.outer_head');
-        var $boxLoading = $('.box');
+        var $boxfix = $('.box_fix');
         var totalWidth = 0;
         var shapeFlag = false;
         var $combinedShape = $('.combined_shape');
@@ -263,9 +264,9 @@
                 source: frames,
                 animate: false,
                 framesX: 2,
-//                frame: 30,
+                frame: 30,
                 onInit: function () {
-                    $(".box").show();
+                    $boxfix.show();
                     loadIndex = 0;
                     console.log("正在加载");
                 },
@@ -295,10 +296,9 @@
 //                }
             }).data("spritespin");
 
-//            setTimeout(function () {
+            setTimeout(function () {
                 $('.loading_wrap').hide();
-//            }, 3000);
-//            $boxLoading.hide();
+            }, 3000);
         }
 
         function Load360Top() {
@@ -318,9 +318,9 @@
                 sense: -1,
                 source: frames,
                 animate: false,
-//                frame: 30,
+                frame: 30,
                 onInit: function () {
-                    $(".box").show();
+                    $boxfix.show();
                     loadIndex = 0;
                     console.log("正在加载");
                 },
@@ -330,12 +330,12 @@
                     if (p > 100) {
                         p = 100;
                     }
-                    $(".box p").html(p + "%");
+                    $boxfix.find('p').html(p + "%");
                 },
                 onLoad: function () {
                     console.log("加载完成");
-                    $(".box").hide();
-                    $(".box p").html("0%");
+                    $boxfix.hide();
+                    $boxfix.find('p').html("0%");
                     //$('.loading_wrap').hide();
                 },
                 onDraw: function (t, p) {
@@ -358,14 +358,14 @@
             $('.container').css('height', $('iframe').height() + 64 + 'px');
             $('.content').css({'height': $('.container').height() - 90 + 'px', 'padding-top': '90px'});
             //加载效果
-            $(".box").show();
+            $boxfix.show();
             var pro = 1;
             var t= setInterval(function () {
                 pro =parseInt(pro + (Math.random()*10));
                 if (pro > 90) {
                     pro = 91;
                 }
-                $(".box p").html(pro + "%");
+                $boxfix.find('p').html(pro + "%");
                 clearInterval(t);
             }, 1000);
         }
@@ -404,8 +404,8 @@
         //加载完毕之后(VR)
         function HideLoading() {
             //$('.loading_wrap').hide();
-            $(".box").hide();
-            $(".box p").html("0%");
+            $boxfix.hide();
+            $boxfix.find('p').html("0%");
             //设置场景
             $("#VRShowContent")[0].contentWindow.switchover(SelectedCarHubInteriorAngle);
         }
